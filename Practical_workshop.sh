@@ -8,3 +8,4 @@ gpg --version
 gpg --list-secret-keys --keyid-format=long
 gpg --armor --export-secret-keys XXXXXXXXXX (FEBDE2535840B779)
 gpg --import llave_et.asc //(llave_et.asc=archivo donde se guardo la llave publica del compañero)
+$ echo "ey ey ey pokkie, do not say that, you are beautiful" > doc_no_cifrado.txt // explicar que hace
