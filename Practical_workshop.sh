@@ -1,7 +1,7 @@
 uname -a
 which gpg
 gpg --full-generate-key
-gpg --list-keys // lsito todas las llaves que tengo
+gpg --list-keys // listo todas las llaves que tengo
 gpg --armor --export santiagoyambay123@gmail.com > mi_llave_publica.asc
 gpg --armor-export //
 gpg --version
