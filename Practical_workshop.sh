@@ -14,3 +14,4 @@ gpg --output doc_no_cirfrado_firmado.txt --clearsign doc_no_cifrado.txt #Clear s
 ls #Lists the files in my current directory.
 cat doc_no_cifrado.txt #Displays the content of the file directly in your terminal
 gpg --verify santiago_doc_no_cifrado_firmado.txt #Verifies the digital signature of the file to confirm its authenticity and ensure it hasn't been tampered with.
+gpg --edit-key BF8A9258824D7DC2D83D51DBFEBDE2535840B779 #Opens an interactive menu to manage, edit, or sign the specific GPG key identified by that fingerprint.
