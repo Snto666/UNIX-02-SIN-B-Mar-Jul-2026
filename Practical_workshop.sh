@@ -15,3 +15,4 @@ ls #Lists the files in my current directory.
 cat doc_no_cifrado.txt #Displays the content of the file directly in your terminal
 gpg --verify santiago_doc_no_cifrado_firmado.txt #Verifies the digital signature of the file to confirm its authenticity and ensure it hasn't been tampered with.
 gpg --edit-key BF8A9258824D7DC2D83D51DBFEBDE2535840B779 #Opens an interactive menu to manage, edit, or sign the specific GPG key identified by that fingerprint.
+gpg> trust #This sub-command allows you to set the level of confidence you have in the key owner's ability to accurately validate other people's keys.
