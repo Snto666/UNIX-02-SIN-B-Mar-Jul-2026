@@ -19,3 +19,4 @@ gpg> trust #This sub-command allows you to set the level of confidence you have 
 gpg --sign-key BF8A9258824D7DC2D83D51DBFEBDE2535840B779 #Use your private key to digitally sign the specified public key, officially certifying that you have verified the owner's identity.
 gpg --output doc_no_cifrado_firmado_binario.txt --sign doc_no_cifrado.txt #Creates a compressed binary file that contains both the original content and your digital signature.
 gpg --output doc_no_cifrado_firmado_binario.txt --sign doc_no_cifrado.txt #creates a compressed binary file that contains both the original content and your digital signature.
+gpg --verify sandoc_no_cifrado_firmado_binario.txt #extracts the original data from the binary file and checks the digital signature to confirm who signed it and that it hasn't been changed.
