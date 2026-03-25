@@ -12,7 +12,7 @@ gpg --output doc_cifrado.txt --encrypt --recipient 3A07743689378D211DE90B9C2E2EA
 gpg --decrypt estpu_doc_cifrado.txt #Decrypt the message sent by my colleague so that his message can now be read
 gpg --output doc_no_cirfrado_firmado.txt --clearsign doc_no_cifrado.txt #Clear sign, it doesn't give binary or strange characters, only text
 ls #Lists the files in my current directory.
-cat doc_no_cifrado.txt #Displays the content of the file directly in your terminal
+cat doc_no_cifrado.txt #Displays the content of the file directly in your terminal.
 gpg --verify santiago_doc_no_cifrado_firmado.txt #Verifies the digital signature of the file to confirm its authenticity and ensure it hasn't been tampered with.
 gpg --edit-key BF8A9258824D7DC2D83D51DBFEBDE2535840B779 #Opens an interactive menu to manage, edit, or sign the specific GPG key identified by that fingerprint.
 gpg> trust #This sub-command allows you to set the level of confidence you have in the key owner's ability to accurately validate other people's keys.
