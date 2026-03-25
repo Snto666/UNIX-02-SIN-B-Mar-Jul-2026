@@ -1,6 +1,6 @@
 uname -a #Displays detailed system information, including the kernel version and operating system architecture..
 which gpg #Locates the executable path of the GPG program to confirm it is installed and see where it lives..
-gpg --version #Checks the version number and supported algorithms of GPG.
+gpg --version #Checks the version number and supported algorithms of GPG..
 gpg --full-generate-key #Starts the interactive process to create a new key pair (public and private) with custom options like key type and expiration date.
 gpg --list-keys #Lists all public keys currently stored in my "keyring."
 gpg --armor --export santiagoyambay123@gmail.com > mi_llave_publica.asc #Exports my public key in a readable text format (ASCII armor) and saves it to a file so you can share it with others.
