@@ -1,0 +1,1 @@
+pwd #print working directory, comando para mostrar la ruta completa del directorio de trabajo actual en Linux
