@@ -7,7 +7,7 @@ gpg --armor --export santiagoyambay123@gmail.com > mi_llave_publica.asc #Exports
 gpg --list-secret-keys --keyid-format=long #Lists my private (secret) keys and displays their IDs in a detailed, long format.
 gpg --armor --export-secret-keys XXXXXXXXXX (FEBDE2535840B779) #Exports my private key..
 gpg --import llave_et.asc #(llave_et.asc=file where the colleague's public key was stored) #Adds a friend's public key to my keyring so you can send them encrypted messages.
-$ echo "ey ey ey pokkie, do not say that, you are beautiful" > doc_no_cifrado.txt # Creates a simple text file with the content you typed.
+$ echo "ey ey ey pokkie, do not say that, you are beautiful" > doc_no_cifrado.txt # Creates a simple text file with the content you typed..
 gpg --output doc_cifrado.txt --encrypt --recipient 3A07743689378D211DE90B9C2E2EAF7C82661FC2 doc_no_cifrado.txt #Encrypt the previously saved message and send it encrypted to my colleague's key.
 gpg --decrypt estpu_doc_cifrado.txt #Decrypt the message sent by my colleague so that his message can now be read
 gpg --output doc_no_cirfrado_firmado.txt --clearsign doc_no_cifrado.txt #Clear sign, it doesn't give binary or strange characters, only text
