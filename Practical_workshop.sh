@@ -1,14 +1,15 @@
-uname -a
-which gpg
-gpg --full-generate-key
-gpg --list-keys // listo todas las llaves que tengo
-gpg --armor --export santiagoyambay123@gmail.com > mi_llave_publica.asc
-gpg --armor-export //
-gpg --version
-gpg --list-secret-keys --keyid-format=long
-gpg --armor --export-secret-keys XXXXXXXXXX (FEBDE2535840B779)
-gpg --import llave_et.asc //(llave_et.asc=archivo donde se guardo la llave publica del compañero)
-$ echo "ey ey ey pokkie, do not say that, you are beautiful" > doc_no_cifrado.txt # explicar que hace
-gpg --output doc_cifrado.txt --encrypt --recipient 3A07743689378D211DE90B9C2E2EAF7C82661FC2 doc_no_cifrado.txt #cifra el mensaje previamente guardado y lo envia encriptado hacia la llave de mi compañero
-gpg --decrypt estpu_doc_cifrado.txt #desencripta el mensaje enviao por mi compañero de manera que ya se puede leer su mensaje
-gpg --output doc_no_cirfrado_firmado.txt --clearsign doc_no_cifrado.txt #Clear sign, no da binario  ni signos extraños, solo texto
+uname -a #Displays detailed system information, including the kernel version and operating system architecture.
+which gpg #Locates the executable path of the GPG program to confirm it is installed and see where it lives.
+gpg --version #Checks the version number and supported algorithms of GPG.
+gpg --full-generate-key #Starts the interactive process to create a new key pair (public and private) with custom options like key type and expiration date.
+gpg --list-keys #Lists all public keys currently stored in my "keyring."
+gpg --armor --export santiagoyambay123@gmail.com > mi_llave_publica.asc #Exports my public key in a readable text format (ASCII armor) and saves it to a file so you can share it with others.
+gpg --list-secret-keys --keyid-format=long #Lists my private (secret) keys and displays their IDs in a detailed, long format.
+gpg --armor --export-secret-keys XXXXXXXXXX (FEBDE2535840B779) #Exports my private key.
+gpg --import llave_et.asc #(llave_et.asc=file where the colleague's public key was stored) #Adds a friend's public key to my keyring so you can send them encrypted messages.
+$ echo "ey ey ey pokkie, do not say that, you are beautiful" > doc_no_cifrado.txt # Creates a simple text file with the content you typed.
+gpg --output doc_cifrado.txt --encrypt --recipient 3A07743689378D211DE90B9C2E2EAF7C82661FC2 doc_no_cifrado.txt #Encrypt the previously saved message and send it encrypted to my colleague's key.
+gpg --decrypt estpu_doc_cifrado.txt #Decrypt the message sent by my colleague so that his message can now be read
+gpg --output doc_no_cirfrado_firmado.txt --clearsign doc_no_cifrado.txt #Clear sign, it doesn't give binary or strange characters, only text
+ls #Lists the files in my current directory.
+cat doc_no_cifrado.txt #Displays the content of the file directly in your terminal
