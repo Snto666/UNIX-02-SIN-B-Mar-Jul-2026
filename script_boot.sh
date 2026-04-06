@@ -7,3 +7,4 @@ cd proyecto/ #Change the terminal's current working directory to place yourself 
 ls -lai #Displays the detailed contents of the directory, including hidden files, their system identification numbers (inodes), and access permissions.
 925544 drwxr-xr-x 2 root root 4096 Apr  6 12:35 .
 714616 drwxr-xr-x 1 root root 4096 Apr  6 12:35 ..
+stat . #Displays detailed metadata of the current directory, such as its block size, inode, numeric permissions, user ID, and the exact dates of its last access or modification.
