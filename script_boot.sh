@@ -8,3 +8,6 @@ ls -lai #Displays the detailed contents of the directory, including hidden files
 925544 drwxr-xr-x 2 root root 4096 Apr  6 12:35 .
 714616 drwxr-xr-x 1 root root 4096 Apr  6 12:35 ..
 stat . #Displays detailed metadata of the current directory, such as its block size, inode, numeric permissions, user ID, and the exact dates of its last access or modification.
+mkdir -p /tmp/prueba/sub1/tmp/prueba/sub2 #It recursively creates the entire nested directory structure, automatically generating intermediate folders if they do not exist.
+stat /tmp/prueba #Displays technical information and specific metadata (permissions, inode, dates) only from the folder located at that path.
+man mkdir #Manual with out internet for the mkdir function
