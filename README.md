@@ -22,3 +22,29 @@ sudo git clone --depth 1 https://github.com/torvalds/linux.git
 cd linux
 sudo make menuconfig
 sudo make -j 2
+sudo mkdir /boot-files
+sudo cp arch/x86/boot/bzImage /boot-files/
+cd ..
+sudo  git clone --depth 1 https://git.busybox.net/busybox
+cd busybox
+sudo sed -i 's/CONFIG_STATIC=.*/CONFIG_STATIC=y/' .config
+sudo  sed -i 's/CONFIG_TC=y/CONFIG_TC=n/' .config
+sudo make clean
+sudo mkdir /boot-files/initramfs
+sudo make CONFIG_PREFIX=/boot-files/initramfs install
+cd /boot-files/initramfs
+sudo vi init
+#!/bin/sh
+/bin/sh
+sudo rm linuxrc
+sudo chmod +x init
+sudo sh -c 'find . | cpio -o -H newc > ../init.cpio'
+cd ..
+sudo su
+dd if=/dev/zero of=boot bs=1M count=50
+mkfs -t fat boot
+syslinux boot
+mkdir m
+mount boot m
+cp bzImage init.cpio m
+umount m
