@@ -20,5 +20,5 @@ sudo apt install .y git vim make gcc libncurses-dev flex bison bc cpio libelf-de
 
 sudo git clone --depth 1 https://github.com/torvalds/linux.git
 cd linux
-sudo makeconfig
+sudo make menuconfig
 sudo make -j 2
