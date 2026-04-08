@@ -50,4 +50,10 @@ cp bzImage init.cpio m
 umount m
 sudo qemu-system-x86_64 -nographic -append "console=ttyS0" \
  -kernel bzImage -initrd init.cpio
- 
+ ~ # [ -d /sys/firmware/efi ] && echo "UEFI" ||
+> echo "BIOS"
+BIOS
+~ # QEMU: Terminated
+root ➜ /boot-files $ [ -d /sys/firmware/efi ] && echo "UEFI" ||
+echo "BIOS"
+BIOS
