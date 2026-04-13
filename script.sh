@@ -17,4 +17,20 @@ ls -lah
 #Syntax: ls
 ##Explanation: -lah It displays a list of all files in a long, detailed format, with file sizes in units.
 mkdir -- -rf
+#Syntax: mkdir 
+#Explanation: -- -rf  create a  directory named "-rf" .
 rmdir -- -rf
+#Syntax: mkdir
+#Explanation: -- -rf removes the specific directory named "-rf"
+ls --help
+#Syntax: ls 
+#Explanation: --help displays a complete manual and list of options for the ls command  in the terminal
+man ls 
+#Syntax: man 
+#Explanation: ls open the manual page for the ls command, provide a guide that details every option, argument, and technical behavior.
+--depth 
+#--depth <depth>
+        #Create a shallow clone with a history truncated to the specified number of commits. Implies --single-branch unless --no-single-branch is given to fetch the
+        #histories near the tips of all branches. If you want to clone submodules shallowly, also pass --shallow-submodules.
+chmod
+
