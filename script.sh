@@ -33,4 +33,20 @@ man ls
         #Create a shallow clone with a history truncated to the specified number of commits. Implies --single-branch unless --no-single-branch is given to fetch the
         #histories near the tips of all branches. If you want to clone submodules shallowly, also pass --shallow-submodules.
 chmod
+#Syntax: chmod 
+#Explanation: Changes the access permissions of a file or directory for the owner, the group, and others.
+chmod +x script.sh
+#Syntax: chmod 
+#Explanation: Adds execute permission to the file for all users like owner, group, and others) by default.
+
+chmod u+x script.sh
+#Syntax: chmod 
+#Explanation: Grants execute permission exclusively to the owner user of the script, leaving other permissions unchanged.
+
+chmod o-r secreto.txt
+#Syntax: chmod 
+#Explanation: Removes read permission from others everyone else who isn't the owner or in the file's group. 
+chmod u=rw,go= privado
+#Syntax: chmod 
+#Explanation: Grants the owner read and write access while stripping all permissions from the group and others, making the file strictly private.
 
