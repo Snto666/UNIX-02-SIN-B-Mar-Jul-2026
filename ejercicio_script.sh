@@ -6,3 +6,4 @@ ls -l hola.sh #We checked the permissions we had
 chmod +x hola.sh #Give to hola.sh the necessary permissions.
 ls -l hola.sh #We checked again what permissions the hola.sh have.
 ./hola.sh #He gives us what we requested, now with the necessary permission.
+ls /etc #List the contents of the /etc directory
