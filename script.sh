@@ -52,4 +52,6 @@ chmod u=rw,go= privado
 sudo echo "hola" > /etc/archivo_protegido #This command is missing sudo permission in its second part, because without it, the command does not work correctly.
 sudo echo "hola" | sudo tee /etc/archivo_protegido > /dev/null #It writes "hello" into a file that requires administrator permissions, but it doesn't display anything on the screen.
 cat /etc/archivo_protegido #It shows the contents of the file on the screen.
-sudo echo "hola" | sudo tee /etc/archivo_protegido # #It writes "hello" into a file that requires administrator permissions, but it does display the message on the screen.
+sudo echo "hola" | sudo tee /etc/archivo_protegido #It writes "hello" into a file that requires administrator permissions, but it does display the message on the screen.
+sudo sh -c 'echo "chao" >> /etc/archivo_protegido' #The command causes a new terminal with administrator privileges to execute the complete instruction to add text to the end of the file without deleting what already existed.
+sudo su -
