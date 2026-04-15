@@ -3,3 +3,5 @@ echo 'echo "Hola desde mi primer script"' >> hola.sh #Add the text "Hello" from 
 cat hola.sh #Show the text inside hola.sh
 ./hola.sh
 ls -l hola.sh #We checked the permissions we had
+chmod +x hola.sh # Give to hola.sh the necessary permissions.
+ls -l hola.sh
