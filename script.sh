@@ -54,4 +54,6 @@ sudo echo "hola" | sudo tee /etc/archivo_protegido > /dev/null #It writes "hello
 cat /etc/archivo_protegido #It shows the contents of the file on the screen.
 sudo echo "hola" | sudo tee /etc/archivo_protegido #It writes "hello" into a file that requires administrator permissions, but it does display the message on the screen.
 sudo sh -c 'echo "chao" >> /etc/archivo_protegido' #The command causes a new terminal with administrator privileges to execute the complete instruction to add text to the end of the file without deleting what already existed.
-sudo su -
+sudo su - #The current session will become a superuser session.
+echo "$HOME" # Give us /home/codespace. This one give us the route-expand the variable.
+echo '$HOME' # Give us echo '$HOME'.This one is like a string, just give us the mesage between the ' '
