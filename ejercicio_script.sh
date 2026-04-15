@@ -7,3 +7,4 @@ chmod +x hola.sh #Give to hola.sh the necessary permissions.
 ls -l hola.sh #We checked again what permissions the hola.sh have.
 ./hola.sh #He gives us what we requested, now with the necessary permission.
 ls /etc #List the contents of the /etc directory
+sudo touch /etc/prueba.txt #Create an empty file called "test.txt" inside the system folder /etc. It is necessary the sudo because we are touching the /etc
