@@ -49,4 +49,4 @@ chmod o-r secreto.txt
 chmod u=rw,go= privado
 #Syntax: chmod 
 #Explanation: Grants the owner read and write access while stripping all permissions from the group and others, making the file strictly private.
-
+sudo echo "hola" > /etc/archivo_protegido #This command is missing sudo permission in its second part, because without it, the command does not work correctly.
