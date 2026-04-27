@@ -109,3 +109,9 @@ sudo chgrp grupo_test comun # Change the group of the "commun" file so that it n
 sudo usermod -aG grupo_test $(whoami) # Dynamically add current user to the group equivalent to the command above if you are codespace.
 newgrp grupo_test # Refresh the current session so that the system immediately recognizes that you are already part of the new group.
 groups # Shows the groups the user belongs to in the current session.
+sudo chown luna:grupo_test mi_archivo #Sets luna as owner and grupo_test as group for the file.
+ls -l mi_archivo #Displays the file's detailed permissions and ownership.
+mkdir -p proyecto/sub # Creates a nested directory structure (folder and subfolder) at once.
+touch proyecto/readme proyecto/sub/datos # Creates empty files inside the specific folders.
+sudo chown -R luna:grupo_test proyecto # Recursively changes owner and group for the folder and all its contents.
+ls -R -l proyecto #Lists all files and subdirectories recursively with full details.
