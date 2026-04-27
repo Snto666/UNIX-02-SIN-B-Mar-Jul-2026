@@ -100,3 +100,12 @@ ls -l # Displays the detailed list where you will see that the new items do not 
 sudo  useradd -m -s /usr/bin/zsh luna #It creates a new user named "luna", automatically generates his personal folder and assigns him zsh as his default terminal.
 sudo chown luna mi_archivo # Changes the owner of mi_archivo, transferring ownership from the current user to the new luna user.
 ls -l mi_archivo # Displays detailed file information to check now is "luna".
+groups # Shows the groups the user belongs to in the current session.
+sudo groupadd grupo_test # Create a new group called "grupo_test" in the system.
+touch comun #Create an empty file called "comun".
+ls -l comun #Displays file details ,owner, group and permissions.
+sudo usermod -aG grupo_test codespace # Adds the codespace user to the grupo_test without deleting their previous groups.
+sudo chgrp grupo_test comun # Change the group of the "commun" file so that it now belongs to grupo_test.
+sudo usermod -aG grupo_test $(whoami) # Dynamically add current user to the group equivalent to the command above if you are codespace.
+newgrp grupo_test # Refresh the current session so that the system immediately recognizes that you are already part of the new group.
+groups # Shows the groups the user belongs to in the current session.
