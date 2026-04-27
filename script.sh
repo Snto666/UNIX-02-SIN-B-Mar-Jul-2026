@@ -57,3 +57,39 @@ sudo sh -c 'echo "chao" >> /etc/archivo_protegido' #The command causes a new ter
 sudo su - #The current session will become a superuser session.
 echo "$HOME" # Give us /home/codespace. This one give us the route-expand the variable.
 echo '$HOME' # Give us echo '$HOME'.This one is like a string, just give us the mesage between the ' '
+umask # Give us the level of permissions what we have on our codespace.
+touch archivo1 #Create an empty file called archivo1.
+mkdir diretorio1 #Create a new directory called diretorio1.
+ls -l #Displays a list of the current directory files and folders detailing permissions, owner, size, and date.
+total 64
+-rw-rw-rw-  1 codespace root      34523 Apr 27 12:07 LICENSE
+-rw-rw-rw-  1 codespace root         70 Apr 27 12:07 README.md
+-rw-rw-rw-  1 codespace codespace     0 Apr 27 12:31 archivo1
+drwxrwxrwx+ 2 codespace codespace  4096 Apr 27 12:31 diretorio1
+-rw-rw-rw-  1 codespace root        963 Apr 27 12:07 ejercicio1.sh
+-rw-rw-rw-  1 codespace root        481 Apr 27 12:07 ejercicio2.sh
+-rwxrwxrwx  1 codespace root        159 Apr 27 12:07 hola.sh
+-rwxrwxrwx  1 codespace root          0 Apr 27 12:07 prueba.txt
+-rwxrwxrwx  1 codespace root       3394 Apr 27 12:31 script.sh
+-rw-rw-rw-  1 codespace root         28 Apr 27 12:07 sudo
+umask 027 # Removes all permissions from others and write permissions from group.
+touch archivo2 # Create the file by applying the mask (it will look like -rw-r-----).
+mkdir diretorio2 # Create the folder by applying the mask (it will look like drwxr-x---).
+ls -l # It displays a list of the current directory files and folders detailing permissions, owner, size, and date.
+total 68
+-rw-rw-rw-  1 codespace root      34523 Apr 27 12:07 LICENSE
+-rw-rw-rw-  1 codespace root         70 Apr 27 12:07 README.md
+-rw-rw-rw-  1 codespace codespace     0 Apr 27 12:31 archivo1
+-rw-rw-rw-  1 codespace codespace     0 Apr 27 12:35 archivo2
+drwxrwxrwx+ 2 codespace codespace  4096 Apr 27 12:31 diretorio1
+drwxrwxrwx+ 2 codespace codespace  4096 Apr 27 12:35 diretorio2
+-rw-rw-rw-  1 codespace root        963 Apr 27 12:07 ejercicio1.sh
+-rw-rw-rw-  1 codespace root        481 Apr 27 12:07 ejercicio2.sh
+-rwxrwxrwx  1 codespace root        159 Apr 27 12:07 hola.sh
+-rwxrwxrwx  1 codespace root          0 Apr 27 12:07 prueba.txt
+-rwxrwxrwx  1 codespace root       3431 Apr 27 12:34 script.sh
+-rw-rw-rw-  1 codespace root         28 Apr 27 12:07 sudo
+sudo apt-get update # Updates the list of packages available in the repositories
+sudo apt-get install acl # Install the Access Control Lists (ACL) tool.
+sudo chown -R $(whoami) . # It makes us the owner of all files and folders in the current directory.
+sudo setfacl -bnR . # Removes all extended permission rules (ACLs) recursively
