@@ -93,3 +93,10 @@ sudo apt-get update # Updates the list of packages available in the repositories
 sudo apt-get install acl # Install the Access Control Lists (ACL) tool.
 sudo chown -R $(whoami) . # It makes us the owner of all files and folders in the current directory.
 sudo setfacl -bnR . # Removes all extended permission rules (ACLs) recursively
+umask 077 # Set a total privacy mask. Blocks all permissions for the group and other users.
+touch secreto.txt # Create a file that only owner can read and edit.
+mkdir privado # Create a folder where only owner can enter, view files or create content.
+ls -l # Displays the detailed list where you will see that the new items do not have permissions for anyone other than the owner.
+sudo  useradd -m -s /usr/bin/zsh luna #It creates a new user named "luna", automatically generates his personal folder and assigns him zsh as his default terminal.
+sudo chown luna mi_archivo # Changes the owner of mi_archivo, transferring ownership from the current user to the new luna user.
+ls -l mi_archivo # Displays detailed file information to check now is "luna".
