@@ -220,6 +220,7 @@ RUN git config --system --add safe.directory '*' \
 # Prompt del curso para bash
 RUN chsh -s /usr/bin/zsh root
 RUN cat >> /root/.zshrc <<'EOF'
-PROMPT='%F{cyan}[Santiago-Yambay]%f %F{yellow}%1~%f %(?.%F{green}✓.%F{red}✕ %?)%f %# '
+PROMPT='%F{orange}[Santiago-Yambay]%f %F{red}%1~%f %(?.%F{blue}✓.%F{pink}✕ %?)%f %# '
 EOF
+ENV SHELL=/usr/bin/zsh
 CMD ["/usr/bin/zsh"]
