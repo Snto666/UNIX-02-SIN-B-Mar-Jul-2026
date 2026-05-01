@@ -5,6 +5,6 @@ aptitude moo # Triggers a hidden Easter egg that claims there are no Easter eggs
 ls -l # Displays files using a long listing format, showing permissions, owner, and size
 ls -r # Reverses the order of the directory listing
 ls -lr # Lists files in long format and in reverse alphabetical order
-aptitude -v moo
+aptitude -v moo # Increases verbosity to get a different response from the hidden Easter egg
 aptitude -vv moo
 aptitude -vvv moo
