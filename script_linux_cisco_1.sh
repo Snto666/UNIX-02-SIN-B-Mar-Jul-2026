@@ -9,7 +9,7 @@ aptitude -v moo # Increases verbosity to get a different response from the hidde
 aptitude -vv moo # Increases verbosity even further to continue the hidden dialogue
 aptitude -vvv moo # High verbosity that finally reveals the hidden ASCII art "cow"
 pwd # Displays the absolute path of the current working directory
-cd
+cd # Changes the current directory to the user's home directory
 cd Documents  
 cd /
 cd /home/sysadmin
