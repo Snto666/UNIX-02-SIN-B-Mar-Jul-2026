@@ -33,7 +33,7 @@ exit # Closes the current terminal session or logs out of the current user
 sudo sl # Runs the 'Steam Locomotive' command with administrative privileges using sudo
 #7) Permisos
 cd ~/Documents # Navigates to the Documents folder in the home directory
-ls -l hello.sh   
+ls -l hello.sh  # Lists long format details for the specific file 'hello.sh'
 #8) Cambiar los permisos de los archivos
 cd ~/Documents
 ls -l hello.sh 
