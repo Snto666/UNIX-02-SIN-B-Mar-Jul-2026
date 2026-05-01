@@ -17,7 +17,7 @@ cd School/Art # Moves to a subdirectory using a relative path (School/Art)
 cd ..   # Moves up one level in the directory tree to the parent directory
 ls -l /var/log/ # Shows a detailed long list of files in the system log directory
 ls -lt /var/log # Lists files in long format, sorted by modification time (newest first)
-ls -l -S /var/log 
+ls -l -S /var/log # Lists files in long format, sorted by file size (largest first)
 ls -lSr /var/log
 ls -r /var/log    
 su
