@@ -51,7 +51,7 @@ sudo ./hello.sh # Runs the script 'hello.sh' with root privileges using sudo
 #10) Visualización de archivos 
 cd ~/Documents # Navigates to the Documents folder in the home directory
 cat animals.txt # Prints the entire content of 'animals.txt' to the terminal 
-cat alpha.txt 
+cat alpha.txt # Prints the entire content of 'alpha.txt' to the terminal
 head alpha.txt 
 tail alpha.txt 
 head -n 5 alpha.txt
