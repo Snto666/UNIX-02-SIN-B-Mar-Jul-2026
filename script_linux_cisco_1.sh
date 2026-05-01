@@ -40,7 +40,7 @@ ls -l hello.sh # Lists long format details for the specific file 'hello.sh'
 ./hello.sh # Attempts to execute the 'hello.sh' script in the current directory
 chmod u+x hello.sh # Grants execution permissions to the owner (user) of the file
 ls -l hello.sh # Lists long format details for the specific file 'hello.sh' 
-./hello.sh
+./hello.sh # Attempts to execute the 'hello.sh' script in the current directory
 #9) Cambiar el propietario de un archivo
 cd ~/Documents
 ls -l 
