@@ -19,7 +19,7 @@ ls -l /var/log/ # Shows a detailed long list of files in the system log director
 ls -lt /var/log # Lists files in long format, sorted by modification time (newest first)
 ls -l -S /var/log # Lists files in long format, sorted by file size (largest first)
 ls -lSr /var/log # Lists files in long format, sorted by file size in reverse order (smallest first)
-ls -r /var/log    
+ls -r /var/log # Lists the directory contents in reverse alphabetical order
 su
 exit
 el siguiente ocmando es ocnfigurado de la sigiuente manera igual tienes que explicarlo (Para evitar ejecutar comandos sensibles o privilegiados, hemos configurado el comando steam locomotive, sl, para que requiera acceso administrativo. Si el comando se ejecuta como sysadmin, aparece un mensaje de error:
