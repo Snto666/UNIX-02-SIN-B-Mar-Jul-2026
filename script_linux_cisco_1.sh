@@ -62,4 +62,4 @@ cp /etc/passwd . # Copies the system's password file to the current directory (.
 ls # Lists the files and directories in the current working directory
 #11.1) Copiar archivos 
 cd ~ # Changes the current working directory to the user's home directory
-dd if=/dev/zero of=/tmp/swapex bs=1M count=50 
+dd if=/dev/zero of=/tmp/swapex bs=1M count=50 # Creates a 50MB file named 'swapex' filled with zeros from /dev/zero
