@@ -15,11 +15,46 @@ cd / # Changes the directory to the root (/), the top-level directory of the sys
 cd /home/sysadmin # Navigates to a specific absolute path: the home directory of 'sysadmin'
 cd School/Art # Moves to a subdirectory using a relative path (School/Art)
 cd ..   # Moves up one level in the directory tree to the parent directory
+#5) Listados de archivos
+sl # Lists the files and directories in the current working directory
 ls -l /var/log/ # Shows a detailed long list of files in the system log directory
 ls -lt /var/log # Lists files in long format, sorted by modification time (newest first)
 ls -l -S /var/log # Lists files in long format, sorted by file size (largest first)
 ls -lSr /var/log # Lists files in long format, sorted by file size in reverse order (smallest first)
 ls -r /var/log # Lists the directory contents in reverse alphabetical order
-su # Switches the current user to the superuser (root)
+#6) Acceso administrativo
+su - # Switches the current user to the superuser (root)
 exit # Closes the current terminal session or logs out of the current user
 sudo sl # Runs the 'Steam Locomotive' command with administrative privileges using sudo
+#7) Permisos
+cd ~/Documents
+ls -l hello.sh   
+#8) Cambiar los permisos de los archivos
+cd ~/Documents
+ls -l hello.sh 
+./hello.sh 
+chmod u+x hello.sh
+ls -l hello.sh   
+./hello.sh
+#9) Cambiar el propietario de un archivo
+cd ~/Documents
+ls -l 
+sudo chown root hello.sh   
+ls -l hello.sh 
+./hello.sh 
+sudo ./hello.sh
+#10) Visualización de archivos 
+cd ~/Documents
+cat animals.txt   
+cat alpha.txt 
+head alpha.txt 
+tail alpha.txt 
+head -n 5 alpha.txt
+tail -n 5 alpha.txt
+#11) Copiar archivos 
+cd ~/Documents
+cp /etc/passwd .
+ls
+#11.1) Copiar archivos 
+cd ~
+dd if=/dev/zero of=/tmp/swapex bs=1M count=50 
