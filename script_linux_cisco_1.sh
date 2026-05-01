@@ -14,9 +14,9 @@ cd Documents # Moves the current location to the 'Documents' directory
 cd / # Changes the directory to the root (/), the top-level directory of the system
 cd /home/sysadmin # Navigates to a specific absolute path: the home directory of 'sysadmin'
 cd School/Art # Moves to a subdirectory using a relative path (School/Art)
-cd ..   
-ls -l /var/log/
-ls -lt /var/log 
+cd ..  # Moves up one level in the directory tree to the parent directory
+ls -l /var/log/# Moves up one level in the directory tree to the parent directory
+ls -lt /var/log # Moves up one level in the directory tree to the parent directory
 ls -l -S /var/log 
 ls -lSr /var/log
 ls -r /var/log    
