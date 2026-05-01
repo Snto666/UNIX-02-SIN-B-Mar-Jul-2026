@@ -7,4 +7,4 @@ ls -r # Reverses the order of the directory listing
 ls -lr # Lists files in long format and in reverse alphabetical order
 aptitude -v moo # Increases verbosity to get a different response from the hidden Easter egg
 aptitude -vv moo # Increases verbosity even further to continue the hidden dialogue
-aptitude -vvv moo
+aptitude -vvv moo # High verbosity that finally reveals the hidden ASCII art "cow"
