@@ -13,7 +13,7 @@ cd # Changes the current directory to the user's home directory
 cd Documents # Moves the current location to the 'Documents' directory
 cd / # Changes the directory to the root (/), the top-level directory of the system
 cd /home/sysadmin # Navigates to a specific absolute path: the home directory of 'sysadmin'
-cd School/Art 
+cd School/Art # Moves to a subdirectory using a relative path (School/Art)
 cd ..   
 ls -l /var/log/
 ls -lt /var/log 
