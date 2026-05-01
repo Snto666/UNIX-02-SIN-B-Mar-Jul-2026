@@ -11,7 +11,7 @@ aptitude -vvv moo # High verbosity that finally reveals the hidden ASCII art "co
 pwd # Displays the absolute path of the current working directory
 cd # Changes the current directory to the user's home directory
 cd Documents # Moves the current location to the 'Documents' directory
-cd /
+cd / # Changes the directory to the root (/), the top-level directory of the system
 cd /home/sysadmin
 cd School/Art
 cd ..   
