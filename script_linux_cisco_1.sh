@@ -53,7 +53,7 @@ cd ~/Documents # Navigates to the Documents folder in the home directory
 cat animals.txt # Prints the entire content of 'animals.txt' to the terminal 
 cat alpha.txt # Prints the entire content of 'alpha.txt' to the terminal
 head alpha.txt # Displays the first 10 lines of 'alpha.txt' by default
-tail alpha.txt 
+tail alpha.txt # Displays the last 10 lines of 'alpha.txt' by default
 head -n 5 alpha.txt
 tail -n 5 alpha.txt
 #11) Copiar archivos 
