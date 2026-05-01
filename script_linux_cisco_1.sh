@@ -61,5 +61,5 @@ cd ~/Documents # Navigates to the Documents folder in the home directory
 cp /etc/passwd . # Copies the system's password file to the current directory (.)
 ls # Lists the files and directories in the current working directory
 #11.1) Copiar archivos 
-cd ~
+cd ~ # Changes the current working directory to the user's home directory
 dd if=/dev/zero of=/tmp/swapex bs=1M count=50 
