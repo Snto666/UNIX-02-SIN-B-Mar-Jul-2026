@@ -47,7 +47,7 @@ ls -l # Displays files using a long listing format, showing permissions, owner, 
 sudo chown root hello.sh # Changes the owner of 'hello.sh' to the root user using administrative privileges
 ls -l hello.sh # Lists long format details for the specific file 'hello.sh' 
 ./hello.sh # Attempts to execute the 'hello.sh' script in the current directory
-sudo ./hello.sh
+sudo ./hello.sh # Runs the script 'hello.sh' with root privileges using sudo
 #10) Visualización de archivos 
 cd ~/Documents
 cat animals.txt   
