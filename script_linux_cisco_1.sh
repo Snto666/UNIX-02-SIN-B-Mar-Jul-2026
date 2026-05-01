@@ -1,14 +1,19 @@
+#2) Sintaxis de comandos básicos
 ls # Lists the files and directories in the current working directory
+#2.1) Argumentos
 ls Documents # Lists the contents specifically within the 'Documents' folder
 aptitude # A high-level interface for the package manager to install, remove, or update software
 aptitude moo # Triggers a hidden Easter egg that claims there are no Easter eggs in this program
+#2.2) Opciones
 ls -l # Displays files using a long listing format, showing permissions, owner, and size
 ls -r # Reverses the order of the directory listing
 ls -lr # Lists files in long format and in reverse alphabetical order
 aptitude -v moo # Increases verbosity to get a different response from the hidden Easter egg
 aptitude -vv moo # Increases verbosity even further to continue the hidden dialogue
 aptitude -vvv moo # High verbosity that finally reveals the hidden ASCII art "cow"
+#3) Imprimir el directorio de trabajo
 pwd # Displays the absolute path of the current working directory
+#4) Cambio de Directorios
 cd # Changes the current directory to the user's home directory
 cd Documents # Moves the current location to the 'Documents' directory
 cd / # Changes the directory to the root (/), the top-level directory of the system
@@ -16,7 +21,7 @@ cd /home/sysadmin # Navigates to a specific absolute path: the home directory of
 cd School/Art # Moves to a subdirectory using a relative path (School/Art)
 cd ..   # Moves up one level in the directory tree to the parent directory
 #5) Listados de archivos
-sl # Lists the files and directories in the current working directory
+ls # Lists the files and directories in the current working directory
 ls -l /var/log/ # Shows a detailed long list of files in the system log directory
 ls -lt /var/log # Lists files in long format, sorted by modification time (newest first)
 ls -l -S /var/log # Lists files in long format, sorted by file size (largest first)
@@ -27,7 +32,7 @@ su - # Switches the current user to the superuser (root)
 exit # Closes the current terminal session or logs out of the current user
 sudo sl # Runs the 'Steam Locomotive' command with administrative privileges using sudo
 #7) Permisos
-cd ~/Documents
+cd ~/Documents # Navigates to the Documents folder in the home directory
 ls -l hello.sh   
 #8) Cambiar los permisos de los archivos
 cd ~/Documents
