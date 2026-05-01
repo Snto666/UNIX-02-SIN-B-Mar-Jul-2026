@@ -49,7 +49,7 @@ ls -l hello.sh # Lists long format details for the specific file 'hello.sh'
 ./hello.sh # Attempts to execute the 'hello.sh' script in the current directory
 sudo ./hello.sh # Runs the script 'hello.sh' with root privileges using sudo
 #10) Visualización de archivos 
-cd ~/Documents
+cd ~/Documents # Navigates to the Documents folder in the home directory
 cat animals.txt   
 cat alpha.txt 
 head alpha.txt 
