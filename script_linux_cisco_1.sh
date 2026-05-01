@@ -59,7 +59,7 @@ tail -n 5 alpha.txt # Shows specifically the last 5 lines of the file
 #11) Copiar archivos 
 cd ~/Documents # Navigates to the Documents folder in the home directory
 cp /etc/passwd . # Copies the system's password file to the current directory (.)
-ls
+ls # Lists the files and directories in the current working directory
 #11.1) Copiar archivos 
 cd ~
 dd if=/dev/zero of=/tmp/swapex bs=1M count=50 
