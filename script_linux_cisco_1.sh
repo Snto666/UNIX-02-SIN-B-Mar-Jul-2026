@@ -37,7 +37,7 @@ ls -l hello.sh  # Lists long format details for the specific file 'hello.sh'
 #8) Cambiar los permisos de los archivos
 cd ~/Documents # Navigates to the Documents folder in the home directory
 ls -l hello.sh # Lists long format details for the specific file 'hello.sh'
-./hello.sh 
+./hello.sh # Attempts to execute the 'hello.sh' script in the current directory
 chmod u+x hello.sh
 ls -l hello.sh   
 ./hello.sh
