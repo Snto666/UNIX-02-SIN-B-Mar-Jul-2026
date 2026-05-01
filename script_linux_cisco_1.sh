@@ -57,7 +57,7 @@ tail alpha.txt # Displays the last 10 lines of 'alpha.txt' by default
 head -n 5 alpha.txt # Shows specifically the first 5 lines of the file
 tail -n 5 alpha.txt # Shows specifically the last 5 lines of the file
 #11) Copiar archivos 
-cd ~/Documents
+cd ~/Documents # Navigates to the Documents folder in the home directory
 cp /etc/passwd .
 ls
 #11.1) Copiar archivos 
