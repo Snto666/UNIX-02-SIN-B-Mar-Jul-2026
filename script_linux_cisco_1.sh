@@ -50,7 +50,7 @@ ls -l hello.sh # Lists long format details for the specific file 'hello.sh'
 sudo ./hello.sh # Runs the script 'hello.sh' with root privileges using sudo
 #10) Visualización de archivos 
 cd ~/Documents # Navigates to the Documents folder in the home directory
-cat animals.txt   
+cat animals.txt # Prints the entire content of 'animals.txt' to the terminal 
 cat alpha.txt 
 head alpha.txt 
 tail alpha.txt 
