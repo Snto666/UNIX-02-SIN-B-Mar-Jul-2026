@@ -54,7 +54,7 @@ cat animals.txt # Prints the entire content of 'animals.txt' to the terminal
 cat alpha.txt # Prints the entire content of 'alpha.txt' to the terminal
 head alpha.txt # Displays the first 10 lines of 'alpha.txt' by default
 tail alpha.txt # Displays the last 10 lines of 'alpha.txt' by default
-head -n 5 alpha.txt
+head -n 5 alpha.txt # Shows specifically the first 5 lines of the file
 tail -n 5 alpha.txt
 #11) Copiar archivos 
 cd ~/Documents
