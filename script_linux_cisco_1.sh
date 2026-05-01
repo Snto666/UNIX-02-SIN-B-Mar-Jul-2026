@@ -44,7 +44,7 @@ ls -l hello.sh # Lists long format details for the specific file 'hello.sh'
 #9) Cambiar el propietario de un archivo
 cd ~/Documents # Navigates to the Documents folder in the home directory
 ls -l # Displays files using a long listing format, showing permissions, owner, and size
-sudo chown root hello.sh   
+sudo chown root hello.sh # Changes the owner of 'hello.sh' to the root user using administrative privileges
 ls -l hello.sh 
 ./hello.sh 
 sudo ./hello.sh
