@@ -6,6 +6,6 @@ id -u #Prints the effective user ID (numeric UID) only.
 id -g # Prints the effective group ID (numeric GID) only.
 id -G # Prints all group IDs (supplementary GIDs) associated with the user.
 cat /etc/group |  grep root # Searches for the string "root" within the group definition file to show its GID and members.
-cat /etc/gshadow
+cat /etc/gshadow # Displays the file containing encrypted group passwords and group administrators (usually requires root/sudo access).
 mkdir ~/proyecto_unix/
 ls -la ~/proyecto_unix/
