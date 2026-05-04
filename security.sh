@@ -4,7 +4,7 @@ groups # Lists all the groups the current user belongs to.
 groups $USER # Specifically queries and lists the groups for the username stored in the environment variable $USER
 id -u #Prints the effective user ID (numeric UID) only.
 id -g # Prints the effective group ID (numeric GID) only.
-id -G
+id -G # Prints all group IDs (supplementary GIDs) associated with the user.
 cat /etc/group |  grep root
 cat /etc/gshadow
 mkdir ~/proyecto_unix/
