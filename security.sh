@@ -9,3 +9,9 @@ cat /etc/group |  grep root # Searches for the string "root" within the group de
 cat /etc/gshadow # Displays the file containing encrypted group passwords and group administrators (usually requires root/sudo access).
 mkdir ~/proyecto_unix/ # Creates a new directory named "proyecto_unix" inside your home folder (~).
 ls -la ~/proyecto_unix/ # Lists all contents including hidden files of the project folder in a long format with detailed permissions
+# groupadd [options] group_name
+# Create a simple group
+sudo groupadd developers
+sudo groupadd -g 2000 operations  # Specific GID
+# System group (GID < 1000)
+sudo groupadd --system web_services
