@@ -11,15 +11,15 @@ mkdir ~/proyecto_unix/ # Creates a new directory named "proyecto_unix" inside yo
 ls -la ~/proyecto_unix/ # Lists all contents including hidden files of the project folder in a long format with detailed permissions
 # groupadd [options] group_name
 # Create a simple group
-sudo groupadd developers
-sudo groupadd -g 2000 operations  # Specific GID
+sudo groupadd developers #Creates a new user group named developers.
+sudo groupadd -g 2000 operations  # Specific GID #Creates group operations with specific GID 2000.
 # System group (GID < 1000)
-sudo groupadd --system web_services
+sudo groupadd --system web_services #Creates a system group with low GID
 # Verify that they were created
 grep "desarrolladores\|operaciones\|servicios _web" /etc/group
 grep -E "desarrolladores|operaciones|servicios _web" /etc/group
 # View main options
-groupadd --help
+groupadd --help #Displays manual and options for groupadd command.
 # View the range of GIDs in the system
 grep "GID _MINI\|GID_MAX\|SYS_GID" /etc/login.defs
 # View the range of GIDs in the system
@@ -31,7 +31,13 @@ grep "GID _MINI\|GID_MAX\|SYS_GID" /etc/login.defs
 # addgroup [options] nombre _grupo
 # Create groups with addgroup
 sudo addgroup diseno
-sudo addgroup --gid 2100 marketing
-sudo addgroup --system cache_web
+sudo addgroup --gid 2100 marketing #Creates group marketing with GID 2100.
+sudo addgroup --system cache_web #Creates a new system group via addgroup.
 #Verify
 grep "diseno\|marketing\|cache_web" /etc/group
+# Ver a qué grupos pertenece el usuario actual
+groups #Lists all groups the current user belongs to.
+id #Displays user identity, UID, and all group IDs.
+# Agregar usuario a un grupo con usermod (bajo nivel)
+sudo usermod -aG desarrolladores root #We usea root beacuse the $HOME doesn't have anything inside, so we hae to change it to "root"
+sudo usermod -aG diseno root
