@@ -16,8 +16,8 @@ sudo groupadd -g 2000 operations  # Specific GID #Creates group operations with 
 # System group (GID < 1000)
 sudo groupadd --system web_services #Creates a system group with low GID
 # Verify that they were created
-grep "desarrolladores\|operaciones\|servicios _web" /etc/group
-grep -E "desarrolladores|operaciones|servicios _web" /etc/group
+grep "desarrolladores\|operaciones\|servicios_web" /etc/group
+grep -E "desarrolladores|operaciones|servicios_web" /etc/group
 # View main options
 groupadd --help #Displays manual and options for groupadd command.
 # View the range of GIDs in the system
@@ -41,3 +41,13 @@ id #Displays user identity, UID, and all group IDs.
 # Agregar usuario a un grupo con usermod (bajo nivel)
 sudo usermod -aG desarrolladores root #We usea root beacuse the $HOME doesn't have anything inside, so we hae to change it to "root"
 sudo usermod -aG diseno root
+# CRÍTICO: el flag -a (append) es fundamental
+# Sin -a, usermod REEMPLAZA todos los grupos del usuario
+# Con -a, AGREGA al grupo manteniendo los existentes
+# Verificar cambio en /etc/group
+grep "desarrolladores\|diseno" /etc/group
+# Agregar usuario a grupo con adduser (alto nivel,Debian)
+sudo adduser root marketing
+# Ver el estado actual
+id root
+grep root /etc/group
