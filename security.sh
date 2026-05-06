@@ -15,3 +15,23 @@ sudo groupadd developers
 sudo groupadd -g 2000 operations  # Specific GID
 # System group (GID < 1000)
 sudo groupadd --system web_services
+# Verify that they were created
+grep "desarrolladores\|operaciones\|servicios _web" /etc/group
+grep -E "desarrolladores|operaciones|servicios _web" /etc/group
+# View main options
+groupadd --help
+# View the range of GIDs in the system
+grep "GID _MINI\|GID_MAX\|SYS_GID" /etc/login.defs
+# View the range of GIDs in the system
+# In Ubuntu typically:
+#SYS_GID_MIN = 100
+#SYS_GID_MAX = 999
+#GID_MIN = 1000
+#GID_MAX = 600000
+# addgroup [options] nombre _grupo
+# Create groups with addgroup
+sudo addgroup diseno
+sudo addgroup --gid 2100 marketing
+sudo addgroup --system cache_web
+#Verify
+grep "diseno\|marketing\|cache_web" /etc/group
