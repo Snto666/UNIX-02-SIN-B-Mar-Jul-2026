@@ -55,3 +55,10 @@ grep root /etc/group
 sudo groupadd grupo_temporal
 sudo usermod -aG grupo_temporal root
 id root # Have grupo_temporal
+# Now the ERROR: usermod with out -a
+sudo usermod -G desarrolladores root
+# This REMOVES all child groups except developers
+id root # lost all other groups
+#Restore
+sudo usermod -aG diseño,marketing,grupo_temporal root
+id root 
