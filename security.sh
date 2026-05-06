@@ -51,3 +51,7 @@ sudo adduser root marketing
 # View current status
 id root
 grep root /etc/group
+# Create a temporary group for the demo
+sudo groupadd grupo_temporal
+sudo usermod -aG grupo_temporal root
+id root # Have grupo_temporal
