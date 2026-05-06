@@ -41,13 +41,13 @@ id #Displays user identity, UID, and all group IDs.
 # Agregar usuario a un grupo con usermod (bajo nivel)
 sudo usermod -aG desarrolladores root #We usea root beacuse the $HOME doesn't have anything inside, so we hae to change it to "root"
 sudo usermod -aG diseno root
-# CRÍTICO: el flag -a (append) es fundamental
-# Sin -a, usermod REEMPLAZA todos los grupos del usuario
-# Con -a, AGREGA al grupo manteniendo los existentes
-# Verificar cambio en /etc/group
+# CRITICAL: the -a (append) flag is fundamental
+# Without -a, usermod REPLACES all user groups
+# With -a, ADDS the user to the group while keeping existing groups
+# Verify change in /etc/group
 grep "desarrolladores\|diseno" /etc/group
-# Agregar usuario a grupo con adduser (alto nivel,Debian)
+# Add user to group with adduser (high level, Debian)
 sudo adduser root marketing
-# Ver el estado actual
+# View current status
 id root
 grep root /etc/group
