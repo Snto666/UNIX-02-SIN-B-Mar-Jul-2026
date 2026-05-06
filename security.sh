@@ -75,7 +75,12 @@ ls -la ~/lab_chgrp/reportes/
 sudo chgrp desarrolladores ~/lab_chgrp/proyectos/app.py
 ls -la ~/lab_chgrp/proyectos/
 # Change the group of multiple files at once
-sudo chgrp diseno ~/lab_chgrp/proyectos/config.json ~/lab_chgrp/reportes/informe.txt
+sudo chgrp diseno ~/lab_chgrp/proyectos/config.json ~/lab_chgrp/reportes/informe.txt #Changes group ownership of specific files to "diseno"
 # Verify changes in both directories
-ls -la ~/lab_chgrp/proyectos/
-ls -la ~/lab_chgrp/reportes/
+ls -la ~/lab_chgrp/proyectos/ #Lists project directory contents with detailed permissions.
+ls -la ~/lab_chgrp/reportes/ #Lists report directory contents with detailed permissions.
+# Recursively change an entire directory
+sudo chgrp -R desarrolladores ~/lab_chgrp/scripts/
+ls -laR ~/lab_chgrp/scripts/
+# Verbose to see what changes
+sudo chgrp -Rv diseno ~/lab_chgrp/reportes/
