@@ -43,3 +43,11 @@ ls -la ~/dentro_de_newgrp.txt # Lists the file details to verify its ownership, 
 # Create a directory
 mkdir -p ~/proyecto_dev/src # Creates the 'proyecto_dev/src' directory structure, including any missing parent directories
 ls -la ~/ # Lists the contents of the home directory to check the newly created file and folder structures
+
+# project_dev/ belongs to 'desarrolladores' group
+# Force environment rollback to the original primary group
+sudo -E setpriv --reuid=vscode --regid=1000 --init-groups /bin/bash # Spawns a clean session forcing the original 'vscode' group ID (1000)
+# Verify that we returned to the original group
+id -gn # Displays the current active primary group name to confirm the rollback
+echo "Grupo restaurado: $(id -gn)" # Prints the confirmation message with the restored group name
+
