@@ -13,6 +13,12 @@ echo "Grupo actual: $(id -gn)" # Prints the current group name to the screen
 touch ~/antes_de_newgrp.txt # Creates an empty file named 'antes_de_newgrp.txt' in the home directory
 ls -la ~/antes_de_newgrp.txt # Lists the details of the created file to verify its group ownership
 
+# Switch to developers group
+sudo -E setpriv --reuid=vscode --regid=1001 --init-groups /bin/bash # Opens a new clean shell session forcing the 'desarrolladores' group ID
+# Verify that the active group changed
+id -gn # Displays the current active primary group name
+echo "Nuevo grupo activo: $(id -gn)" # Prints the confirmation message with the current group name
+
 # === STEP 1: Group and User Preparation ===
 # Create the new group in Alpine Linux
 sudo addgroup desarrolladores # Creates a new system group named 'desarrolladores'
@@ -29,3 +35,11 @@ sudo -E setpriv --reuid=vscode --regid=1001 --init-groups /bin/bash # Opens a ne
 # Verify that the active group changed
 id -gn # Displays the current active primary group name
 echo "Nuevo grupo activo: $(id -gn)" # Prints the confirmation message with the current group name
+
+# Create a file inside the subshell
+touch ~/dentro_de_newgrp.txt # Creates an empty file named 'dentro_de_newgrp.txt' in the user's home directory
+ls -la ~/dentro_de_newgrp.txt # Lists the file details to verify its ownership, permissions, and group assignment
+# The group is now'desarrolladores'
+# Create a directory
+mkdir -p ~/proyecto_dev/src # Creates the 'proyecto_dev/src' directory structure, including any missing parent directories
+ls -la ~/ # Lists the contents of the home directory to check the newly created file and folder structures
