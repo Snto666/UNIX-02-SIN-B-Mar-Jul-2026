@@ -51,3 +51,5 @@ sudo -E setpriv --reuid=vscode --regid=1000 --init-groups /bin/bash # Spawns a c
 id -gn # Displays the current active primary group name to confirm the rollback
 echo "Grupo restaurado: $(id -gn)" # Prints the confirmation message with the restored group name
 
+# Compare the two files
+ls -la ~/antes_de_newgrp.txt ~/dentro_de_newgrp.txt # Lists detailed attributes of both files to compare their ownership and group assignments
