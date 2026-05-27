@@ -53,3 +53,23 @@ echo "Grupo restaurado: $(id -gn)" # Prints the confirmation message with the re
 
 # Compare the two files
 ls -la ~/antes_de_newgrp.txt ~/dentro_de_newgrp.txt # Lists detailed attributes of both files to compare their ownership and group assignments
+
+# newgrp creates a subshell — this is demonstrable 
+echo "PID del shell actual: $$" # Prints the Process ID (PID) of the current parent shell session
+newgrp desarrolladores # Traditional command to switch the primary group to 'desarrolladores' (legacy/reference)
+sudo -E setpriv --reuid=vscode --regid=1001 --init-groups /bin/bash # Spawns a new clean bash subshell forcing the 'desarrolladores' group ID (1001)
+echo "PID dentro de newgrp: $$" # Prints the PID from inside the subshell to verify the process status
+# The PID is different - it is a child process
+
+# Create a group with a password
+sudo groupadd grupo_restringido # Creates a new system group named 'grupo_restringido'
+sudo gpasswd grupo_restringido # Sets a password for the 'grupo_restringido' group to restrict access
+# The system will ask for a password for the group
+
+# A user who does NOT belong to the group can join temporarily if they know the password
+newgrp grupo_restringido # Traditional command to switch the primary group to 'grupo_restringido' (legacy/reference)
+sudo -E setpriv --reuid=vscode --regid=grupo_restringido --init-groups /bin/bash # Spawns a new clean bash subshell forcing the 'grupo_restringido' group
+# The system will ask for the group password.
+# If the password is correct, you will be temporarily joined.
+id -gn # Displays the current active primary group name to verify the temporary membership
+exit # Upon leaving, you lose your temporary membership
