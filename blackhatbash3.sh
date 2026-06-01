@@ -20,3 +20,20 @@ echo "This book's name is ${book}"
 # it can lead to logic errors where the shell fails to identify the variable. 
 # Using '${}' (as shown above) is safer and more robust for maintainable code.
 echo "This book's name is $book"
+
+# ------------------------------------------------------------------------------
+# SECTION 6: COMMAND SUBSTITUTION & DATA PIPELINING
+# ------------------------------------------------------------------------------
+
+# root_directory=$(ls -ld /):
+# This uses 'command substitution' '$(...)'. It captures the standard output (STDOUT) 
+# of the 'ls -ld /' command (which lists the root directory long-format properties) 
+# and stores that entire string inside the variable 'root_directory'. 
+# This technique allows us to manipulate system metadata programmatically.
+root_directory=$(ls -ld /)
+
+# echo "${root_directory}":
+# Retrieves the stored string from the variable and prints it to the terminal.
+# This validates that the system metadata was successfully captured and preserved 
+# within the current session's memory, demonstrating efficient data pipelining.
+echo "${root_directory}"
