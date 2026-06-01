@@ -1,130 +1,79 @@
 #!/bin/bash
 # ==============================================================================
-# Environment and System Diagnostics Script
-# Author: Santiago Yambay
-# Branch: linux_cisco_2
-# Description: Script to document shell environment and system resource status
+# Linux Command Auditing & Security Script (Advanced Documentation)
+# Author: Santiago Yambay | Branch: blackhatbash
+# Description: Detailed audit of system environment, file management, and 
+# safety procedures following Black Hat Bash methodologies.
 # ==============================================================================
 
-# Check the installed version of the Bash shell
+# ------------------------------------------------------------------------------
+# SECTION 1: SYSTEM ENVIRONMENT DIAGNOSTICS
+# ------------------------------------------------------------------------------
+
+# Enables 'xtrace' to display every command before execution. Essential for auditing.
+set -x 
+
+# bash --version: Outputs the version of the interpreter. Impacts compatibility for script syntax.
 bash --version
 
-# Display all environment variables currently set in the session
+# env: Lists all exported environment variables. Impacts process configuration and path resolution.
 env
 
-# Output the path of the current shell interpreter
-echo ${SHELL}
+# Variables tracking session identity, affecting shell-specific logic.
+echo "Shell: ${SHELL}"    # Identifies current interpreter
+echo "Random: ${RANDOM}"  # Generates a pseudo-random integer (0-32767)
+echo "UID: ${UID}"        # Displays User ID. Impacts permission levels (0 = root)
+echo "OSTYPE: ${OSTYPE}"  # Identifies kernel/OS environment for portability
 
-# Generate and display a random number
-echo ${RANDOM}
-
-# Display the current User ID (UID)
-echo ${UID}
-
-# Identify the operating system type
-echo ${OSTYPE}
-
-# List all running processes with full format details
+# ps -ef: Displays all processes with full formatting. Crucial for resource monitoring and PID/PPID mapping.
 ps -ef
 
-# Display disk space usage in a human-readable format
+# df --human-readable: Reports disk space in GB/MB. Critical for preventing storage overflow/crashes.
 df --human-readable
 
-#!/bin/bash
-# ==============================================================================
-# Environment and System Diagnostics Script
-# Author: Santiago Yambay
-# Branch: linux_cisco_2
-# Description: Script to document shell environment and system resource status
-# ==============================================================================
+set +x # Safety: Disable debug mode to prevent unnecessary console flooding.
 
-# Check the installed version of the Bash shell
-bash --version
+# ------------------------------------------------------------------------------
+# SECTION 2: FILE SYSTEM NAVIGATION & AUDITING (LS COMMANDS)
+# ------------------------------------------------------------------------------
 
-# Display all environment variables currently set in the session
-env
+# man ls: Displays the manual page. Impacts your knowledge of command switches/capabilities.
+man ls 
 
-# Output the path of the current shell interpreter
-echo ${SHELL}
+# ls --help: Displays concise usage. Impacts rapid troubleshooting of command syntax.
+ls --help
 
-# Generate and display a random number
-echo ${RANDOM}
+# ls -l: Long format. Lists permissions (rwx), ownership, and timestamps.
+ls -l
 
-# Display the current User ID (UID)
-echo ${UID}
+# ls -la: Long format including hidden files (starting with '.'). Essential for config files (.bashrc).
+ls -la
 
-# Identify the operating system type
-echo ${OSTYPE}
+# ls --all: Identifies every entry including '.' and '..' (current and parent directories).
+ls --all
 
-# List all running processes with full format details
-ps -ef
+# ls --group-directories-first: Organizes list by placing folders at the top. Improves readability.
+ls --group-directories-first
 
-# Display disk space usage in a human-readable format
-df --human-readable
+# ls -R: Recursive listing. Impacts performance by scanning the entire directory tree.
+ls -R
 
-#!/bin/bash
-# ==============================================================================
-# Environment and System Diagnostics Script
-# Author: Santiago Yambay
-# Branch: linux_cisco_2
-# Description: Script to document shell environment and system resource status
-# ==============================================================================
+# ------------------------------------------------------------------------------
+# SECTION 3: SAFETY & RECURSION MANAGEMENT
+# ------------------------------------------------------------------------------
 
-# Check the installed version of the Bash shell
-bash --version
+# SAFETY NOTE: The commands below are commented out. Executing scripts recursively 
+# (calling a script inside itself) creates a 'fork bomb' cycle that consumes 
+# all system memory and CPU cycles, eventually crashing the operating system.
 
-# Display all environment variables currently set in the session
-env
+# bash -n: Performs syntax check without execution. Impacts stability by detecting errors early.
+# bash -n blackhatbash1.sh
 
-# Output the path of the current shell interpreter
-echo ${SHELL}
+# chmod +x: Modifies the file system metadata to grant execute permissions. 
+# Affects security by allowing binary or script activation.
+# chmod +x blackhatbash1.sh
 
-# Generate and display a random number
-echo ${RANDOM}
+# Execution command: Triggers the script file. 
+# ./blackhatbash1.sh
 
-# Display the current User ID (UID)
-echo ${UID}
-
-# Identify the operating system type
-echo ${OSTYPE}
-
-# List all running processes with full format details
-ps -ef
-
-# Display disk space usage in a human-readable format
-df --human-readable
-
-
-#!/bin/bash
-# ==============================================================================
-# Environment and System Diagnostics Script
-# Author: Santiago Yambay
-# Branch: linux_cisco_2
-# Description: Script to document shell environment and system resource status
-# ==============================================================================
-
-# Check the installed version of the Bash shell
-bash --version
-
-# Display all environment variables currently set in the session
-env
-
-# Output the path of the current shell interpreter
-echo ${SHELL}
-
-# Generate and display a random number
-echo ${RANDOM}
-
-# Display the current User ID (UID)
-echo ${UID}
-
-# Identify the operating system type
-echo ${OSTYPE}
-
-# List all running processes with full format details
-ps -ef
-
-# Display disk space usage in a human-readable format
-df --human-readable
-
-#! /bin/bash -x
+echo -e "\e[32m[+] Execution Complete. System state documented and preserved.\e[0m"
