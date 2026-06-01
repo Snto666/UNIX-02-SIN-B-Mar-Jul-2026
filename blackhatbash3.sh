@@ -37,3 +37,20 @@ root_directory=$(ls -ld /)
 # This validates that the system metadata was successfully captured and preserved 
 # within the current session's memory, demonstrating efficient data pipelining.
 echo "${root_directory}"
+
+# ------------------------------------------------------------------------------
+# SECTION 7: VARIABLE LIFECYCLE MANAGEMENT
+# ------------------------------------------------------------------------------
+
+# Unassigning Variables:
+# Variables persist in the shell's memory until they are explicitly removed 
+# or the session terminates. Using 'unset' effectively destroys the variable 
+# definition, freeing memory and preventing potential logic errors or 
+# accidental reuse of sensitive data in subsequent script execution phases.
+
+book="Black Hat Bash"   # Assigning a value to the variable
+unset book             # Removes the variable definition from the shell environment
+
+# The following command will produce no output (or an empty line), confirming 
+# that the variable 'book' no longer exists in the current scope.
+echo "${book}"
