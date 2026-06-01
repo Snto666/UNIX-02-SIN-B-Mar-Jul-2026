@@ -38,7 +38,7 @@ set +x # Safety: Disable debug mode to prevent unnecessary console flooding.
 # ------------------------------------------------------------------------------
 
 # man ls: Displays the manual page. Impacts your knowledge of command switches/capabilities.
-man ls 
+man ls > ls_manual_log.txt  # Redirects manual to file to maintain automation
 
 # ls --help: Displays concise usage. Impacts rapid troubleshooting of command syntax.
 ls --help
