@@ -15,6 +15,7 @@ cat archivo.txt
 
 echo "tres" &> archivo.txt
 cat archivo.txt
+
 echo "tres" &>> archivo.txt
 cat archivo.txt
 
