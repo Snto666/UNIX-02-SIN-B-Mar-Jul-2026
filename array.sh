@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ------------------------------------------------------------------------------
-# SECTION 10: BASH ARRAY MANAGEMENT & INDEXING
+# SECTION 11: BASH ARRAY MANAGEMENT & INDEXING
 # ------------------------------------------------------------------------------
 
 # IP_ADDRESSES=(192.168.1.1 192.168.1.2 192.168.1.3):
@@ -26,7 +26,7 @@ echo "${IP_ADDRESSES[*]}"
 echo "${IP_ADDRESSES[0]}"
 
 # ------------------------------------------------------------------------------
-# SECTION 11: ARRAY ELEMENT DELETION & VALUE MUTATION
+# SECTION 12: ARRAY ELEMENT DELETION & VALUE MUTATION
 # ------------------------------------------------------------------------------
 
 # unset IP_ADDRESSES[1]:
