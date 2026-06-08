@@ -4,3 +4,5 @@ ping_with_arguments.sh
 bash -x ping_with_arguments.sh 127.0.0.1
 chmod u+x ping_with_arguments.sh 
 ping_with_arguments.sh 127.0.0.1 127.0.0.1  127.0.0.1 
+ps -ef 
+echo $? 
