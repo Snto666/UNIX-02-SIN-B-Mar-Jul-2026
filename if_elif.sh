@@ -9,12 +9,16 @@
 # best practice to cleanly segregate the parameter index from surrounding text strings.
 USER_INPUT="${1}"
 
-# if [[ -z "${USER_INPUT}" ]]; then ... fi:
+# if [[ -z "${USER_INPUT}" ]]; then:
 # Utilizes the modern, extended test keyword '[[ ... ]]' combined with the '-z' operator.
 # The '-z' string evaluator checks if the variable string length is exactly zero (null/empty).
 # Impacts script robustness: Acts as a defensive gatekeeper, stopping execution early if 
 # the operator fails to provide the mandatory input argument required for downstream tasks.
 if [[ -z "${USER_INPUT}" ]]; then 
+    
+    # echo "You must provide an argument!":
+    # Outputs an explicit operational error message to Standard Output (STDOUT).
+    # Notifies the operator in real-time that the execution pipeline lacks necessary parameters.
     echo "You must provide an argument!" 
     
     # exit 1:
@@ -22,10 +26,14 @@ if [[ -z "${USER_INPUT}" ]]; then
     # to the parent process environment. Impacts automated orchestration pipelines by explicitly 
     # breaking the chain ('&&') and signaling to external tools that a user error occurred.
     exit 1 
+
+# fi:
+# Closes the initial input validation conditional block.
+# Properly terminates the defensive validation check and allows safe progression if input exists.
 fi
 
 # ------------------------------------------------------------------------------
-# SECTION: CONDITIONAL FILE SYSTEM EVALUATION (METADATA AUDITING)
+# SECTION : CONDITIONAL FILE SYSTEM EVALUATION (METADATA AUDITING)
 # ------------------------------------------------------------------------------
 
 # if [[ -f "${USER_INPUT}" ]]; then:
@@ -33,6 +41,10 @@ fi
 # Evaluates whether the string path points specifically to an existing *regular file* asset 
 # (excluding directories, sockets, symlinks, or character devices).
 if [[ -f "${USER_INPUT}" ]]; then 
+    
+    # echo "${USER_INPUT} is a file.":
+    # Outputs a verification string to Standard Output (STDOUT).
+    # Confirms that the target asset is a standard flat data file capable of standard read/write operations.
     echo "${USER_INPUT} is a file." 
 
 # elif [[ -d "${USER_INPUT}" ]]; then:
@@ -40,6 +52,10 @@ if [[ -f "${USER_INPUT}" ]]; then
 # Evaluates whether the target path specifically maps to an existing *directory* node.
 # Impacts forensic path routing by allowing the script to branch logic based on asset type.
 elif [[ -d "${USER_INPUT}" ]]; then 
+    
+    # echo "${USER_INPUT} is a directory.":
+    # Outputs an analytical status indicator to Standard Output (STDOUT).
+    # Validates that the targeted path is a folder structure containing nested system assets.
     echo "${USER_INPUT} is a directory." 
 
 # else:
@@ -47,5 +63,13 @@ elif [[ -d "${USER_INPUT}" ]]; then
 # evaluations ('-f' and '-d') return a non-zero (false) exit status.
 # Captures edge cases such as broken symlinks, block/character devices, or non-existent assets.
 else 
+    
+    # echo "${USER_INPUT} is not a file or a directory.":
+    # Prints a negative validation response to Standard Output (STDOUT).
+    # Alerts the investigator that the input string does not correspond to any standard active system asset.
     echo "${USER_INPUT} is not a file or a directory."
+
+# fi:
+# Closes the structural file-type evaluation block.
+# Properly terminates the branching structure and restores standard sequential script flow.
 fi
