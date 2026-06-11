@@ -35,3 +35,12 @@ ENV DEBIAN_FRONTEND=noninteractive \
     LANG=es_ES.UTF-8 \
     LC_ALL=es_ES.UTF-8 \
     TERM=xterm-256color
+# ------------------------------------------------------------------------------
+# Block d: Pre-answering Interactive Prompts
+# ------------------------------------------------------------------------------
+# We use the pipe (|) to direct the output of echo into debconf-set-selections 
+# (redirection and pipes — BHB Ch.1). This pre-configures Wireshark to 'false' 
+# for non-root packet capturing, preventing the build from pausing for manual 
+# interaction.
+RUN echo "wireshark-common wireshark-common/install-setuid boolean false" \
+    | debconf-set-selections
