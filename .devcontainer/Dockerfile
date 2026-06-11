@@ -96,3 +96,15 @@ SHELL ["/bin/bash", "-c"]
 # mounts your repository, ensuring that every time you open a terminal, you 
 # are positioned directly within your project folder (Setting up the lab — BHB Ch.3).
 WORKDIR /workspaces
+# ------------------------------------------------------------------------------
+# Block j: Global Git Configuration
+# ------------------------------------------------------------------------------
+# These commands harden the containerized Git environment:
+# - safe.directory '*': Configures Git to trust the mounted workspace directory.
+# - init.defaultBranch main: Sets the primary branch name to 'main'.
+# - pull.rebase false: Configures pull to use merge, preventing unexpected history changes.
+# - git lfs install: Enables Large File Storage hooks system-wide.
+RUN git config --system --add safe.directory '*' \
+ && git config --system init.defaultBranch main \
+ && git config --system pull.rebase false \
+ && git lfs install --system
