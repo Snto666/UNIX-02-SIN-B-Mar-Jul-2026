@@ -108,3 +108,9 @@ RUN git config --system --add safe.directory '*' \
  && git config --system init.defaultBranch main \
  && git config --system pull.rebase false \
  && git lfs install --system
+# ------------------------------------------------------------------------------
+# Block k: Default Shell Change
+# ------------------------------------------------------------------------------
+# We update the root user's default login shell to Zsh for a more advanced 
+# interactive experience (Bash basics — BHB Ch.1).
+RUN chsh -s /usr/bin/zsh root
