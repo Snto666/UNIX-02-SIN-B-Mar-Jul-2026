@@ -81,3 +81,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # the image footprint minimal (Docker / containers — BHB Ch.3).
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
+# ------------------------------------------------------------------------------
+# Block h: Shell Configuration
+# ------------------------------------------------------------------------------
+# We specify bash as the default shell for subsequent RUN instructions. 
+# While /bin/sh is standard, bash offers advanced features like arrays 
+# and extended pattern matching, which are essential for our script automation 
+# (Bash basics — BHB Ch.1).
+SHELL ["/bin/bash", "-c"]
