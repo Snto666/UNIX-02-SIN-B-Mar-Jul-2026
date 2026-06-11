@@ -12,3 +12,11 @@
 # ensuring all essential security tools are available in a single, stable base 
 # (Setting up the lab / Kali — BHB Ch.3).
 FROM kalilinux/kali-rolling:latest
+# ------------------------------------------------------------------------------
+# Block b: Layering and Caching Mechanics
+# ------------------------------------------------------------------------------
+# Docker images are built in layers; every instruction creates a new, immutable 
+# filesystem layer. Docker utilizes a cache to skip unchanged layers during 
+# subsequent builds. Instruction order is critical because changing a high-level 
+# instruction invalidates the cache for all subsequent layers, requiring a full 
+# rebuild (Docker / containers — BHB Ch.3).
