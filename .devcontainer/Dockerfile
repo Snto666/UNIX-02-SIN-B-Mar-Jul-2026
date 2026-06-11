@@ -125,3 +125,11 @@ RUN cat >> /root/.zshrc <<'EOF'
 PROMPT='%F{orange}[Santiago-Yambay]%f %F{red}%1~%f %(?.%F{blue}✓.%F{pink}✕ %?)%f %# '
 EOF
 ENV SHELL=/usr/bin/zsh
+# ------------------------------------------------------------------------------
+# Block m: Startup Command
+# ------------------------------------------------------------------------------
+# 'CMD' defines the default executable for the container at startup. While 'RUN' 
+# executes commands during the image build process, 'CMD' runs only when the 
+# container is actually launched. We set this to Zsh to provide an interactive 
+# shell immediately upon container entry (Docker / containers — BHB Ch.3).
+CMD ["/usr/bin/zsh"]
