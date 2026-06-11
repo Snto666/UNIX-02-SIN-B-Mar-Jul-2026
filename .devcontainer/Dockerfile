@@ -20,3 +20,18 @@ FROM kalilinux/kali-rolling:latest
 # subsequent builds. Instruction order is critical because changing a high-level 
 # instruction invalidates the cache for all subsequent layers, requiring a full 
 # rebuild (Docker / containers — BHB Ch.3).
+# ------------------------------------------------------------------------------
+# Block c: Environment Variables
+# ------------------------------------------------------------------------------
+# ENV sets global environment variables that affect how programs execute within 
+# the shell (env vars — BHB Ch.1).
+# DEBIAN_FRONTEND=noninteractive: Forces silent operation for APT, preventing 
+# installation prompts from stalling the build.
+# LANG & LC_ALL: Set the locale to es_ES.UTF-8, ensuring correct handling of 
+# character encoding in data streams.
+# TERM=xterm-256color: Informs the terminal that it supports 256 colors for 
+# improved CLI tool visualization.
+ENV DEBIAN_FRONTEND=noninteractive \
+    LANG=es_ES.UTF-8 \
+    LC_ALL=es_ES.UTF-8 \
+    TERM=xterm-256color
