@@ -44,3 +44,24 @@ ENV DEBIAN_FRONTEND=noninteractive \
 # interaction.
 RUN echo "wireshark-common wireshark-common/install-setuid boolean false" \
     | debconf-set-selections
+# ------------------------------------------------------------------------------
+# Block e: Package Installation
+# ------------------------------------------------------------------------------
+# Update vs Install: 'apt-get update' syncs the package index, while 'install' 
+# fetches binaries. We chain them with '&&', ensuring installation only runs 
+# if the update succeeds (control operators — BHB Ch.1).
+# Using a single RUN block minimizes layers (Docker / containers — BHB Ch.3).
+# Tools like gawk, sed, and grep (text processing — BHB Ch.2), along with 
+# nmap/tshark/tor are critical for our lab operations.
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    neovim vim zsh bash-completion \
+    perl make gawk sed grep \
+    coreutils findutils procps less tree jq \
+    man-db manpages manpages-posix \
+    curl wget git git-lfs ca-certificates locales \
+    shellcheck \
+    nmap masscan \
+    tcpdump tshark \
+    netcat-traditional socat dnsutils whois traceroute mtr-tiny iproute2 net-tools iputils-ping \
+    tor torsocks proxychains4 obfs4proxy \
+    httpie
