@@ -114,3 +114,14 @@ RUN git config --system --add safe.directory '*' \
 # We update the root user's default login shell to Zsh for a more advanced 
 # interactive experience (Bash basics — BHB Ch.1).
 RUN chsh -s /usr/bin/zsh root
+# ------------------------------------------------------------------------------
+# Block l: Here-Document Configuration
+# ------------------------------------------------------------------------------
+# A "heredoc" (Here-document) allows us to redirect multiple lines of input into 
+# a file or command block (redirection and pipes — BHB Ch.1). Here, we append 
+# a custom Zsh prompt configuration to .zshrc, which visually tracks the 
+# terminal state, including return codes.
+RUN cat >> /root/.zshrc <<'EOF'
+PROMPT='%F{orange}[Santiago-Yambay]%f %F{red}%1~%f %(?.%F{blue}✓.%F{pink}✕ %?)%f %# '
+EOF
+ENV SHELL=/usr/bin/zsh
