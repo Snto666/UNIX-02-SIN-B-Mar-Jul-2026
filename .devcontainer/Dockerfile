@@ -89,3 +89,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # and extended pattern matching, which are essential for our script automation 
 # (Bash basics — BHB Ch.1).
 SHELL ["/bin/bash", "-c"]
+# ------------------------------------------------------------------------------
+# Block i: Working Directory
+# ------------------------------------------------------------------------------
+# Sets the working directory to /workspaces. This is where GitHub Codespaces 
+# mounts your repository, ensuring that every time you open a terminal, you 
+# are positioned directly within your project folder (Setting up the lab — BHB Ch.3).
+WORKDIR /workspaces
