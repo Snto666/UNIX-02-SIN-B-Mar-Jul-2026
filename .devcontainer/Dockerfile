@@ -53,6 +53,18 @@ RUN echo "wireshark-common wireshark-common/install-setuid boolean false" \
 # Using a single RUN block minimizes layers (Docker / containers — BHB Ch.3).
 # Tools like gawk, sed, and grep (text processing — BHB Ch.2), along with 
 # nmap/tshark/tor are critical for our lab operations.
+# ------------------------------------------------------------------------------
+# Block f: Locale Generation
+# ------------------------------------------------------------------------------
+# We use 'sed' (stream editor) to modify the locale configuration file by 
+# replacing the commented-out locale string with the active one (sed — BHB Ch.2). 
+# 'locale-gen' then compiles these settings for system-wide usage.
+# ------------------------------------------------------------------------------
+# Block g: Cache Cleanup
+# ------------------------------------------------------------------------------
+# We clean the APT cache and remove lists in the same RUN layer to ensure the 
+# removed files do not persist in the final image layer, effectively keeping 
+# the image footprint minimal (Docker / containers — BHB Ch.3).
 RUN apt-get update && apt-get install -y --no-install-recommends \
     neovim vim zsh bash-completion \
     perl make gawk sed grep \
@@ -64,21 +76,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     tcpdump tshark \
     netcat-traditional socat dnsutils whois traceroute mtr-tiny iproute2 net-tools iputils-ping \
     tor torsocks proxychains4 obfs4proxy \
-    httpie
-# ------------------------------------------------------------------------------
-# Block f: Locale Generation
-# ------------------------------------------------------------------------------
-# We use 'sed' (stream editor) to modify the locale configuration file by 
-# replacing the commented-out locale string with the active one (sed — BHB Ch.2). 
-# 'locale-gen' then compiles these settings for system-wide usage.
+    httpie \
  && sed -i 's/# es_ES.UTF-8/es_ES.UTF-8/' /etc/locale.gen \
  && locale-gen \
-# ------------------------------------------------------------------------------
-# Block g: Cache Cleanup
-# ------------------------------------------------------------------------------
-# We clean the APT cache and remove lists in the same RUN layer to ensure the 
-# removed files do not persist in the final image layer, effectively keeping 
-# the image footprint minimal (Docker / containers — BHB Ch.3).
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 # ------------------------------------------------------------------------------
