@@ -73,3 +73,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # 'locale-gen' then compiles these settings for system-wide usage.
  && sed -i 's/# es_ES.UTF-8/es_ES.UTF-8/' /etc/locale.gen \
  && locale-gen \
+# ------------------------------------------------------------------------------
+# Block g: Cache Cleanup
+# ------------------------------------------------------------------------------
+# We clean the APT cache and remove lists in the same RUN layer to ensure the 
+# removed files do not persist in the final image layer, effectively keeping 
+# the image footprint minimal (Docker / containers — BHB Ch.3).
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/*
