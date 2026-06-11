@@ -65,3 +65,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     netcat-traditional socat dnsutils whois traceroute mtr-tiny iproute2 net-tools iputils-ping \
     tor torsocks proxychains4 obfs4proxy \
     httpie
+# ------------------------------------------------------------------------------
+# Block f: Locale Generation
+# ------------------------------------------------------------------------------
+# We use 'sed' (stream editor) to modify the locale configuration file by 
+# replacing the commented-out locale string with the active one (sed — BHB Ch.2). 
+# 'locale-gen' then compiles these settings for system-wide usage.
+ && sed -i 's/# es_ES.UTF-8/es_ES.UTF-8/' /etc/locale.gen \
+ && locale-gen \
