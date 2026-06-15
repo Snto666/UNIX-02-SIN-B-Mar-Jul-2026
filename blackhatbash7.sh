@@ -26,3 +26,4 @@ ps | grep -i tty
 ps | grep TTY
 
 grep -v "35.237.4.214" log.txt
+awk '{print $1}' log.txt
