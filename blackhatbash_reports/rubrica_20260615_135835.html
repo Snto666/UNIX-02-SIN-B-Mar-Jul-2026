@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluación Rama blackhatbash</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; color: #333; }
+        .container { max-width: 1200px; margin: 0 auto; background: white; border-radius: 10px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); overflow: hidden; }
+        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px; text-align: center; }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .header p { opacity: 0.9; font-size: 1.1em; }
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; padding: 30px; background: #f8f9fa; border-bottom: 1px solid #e0e0e0; }
+        .info-item { background: white; padding: 15px; border-radius: 5px; border-left: 4px solid #667eea; }
+        .info-item label { font-weight: bold; color: #667eea; font-size: 0.9em; text-transform: uppercase; }
+        .info-item value { display: block; margin-top: 5px; font-size: 1.1em; color: #333; }
+        .score-section { padding: 40px; }
+        .score-card { margin-bottom: 25px; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .score-header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; }
+        .score-header h3 { font-size: 1.1em; }
+        .score-value { font-size: 1.8em; font-weight: bold; }
+        .score-body { padding: 20px; background: #f8f9fa; }
+        .score-bar { width: 100%; height: 30px; background: #e0e0e0; border-radius: 5px; overflow: hidden; margin-bottom: 15px; }
+        .score-fill { height: 100%; background: linear-gradient(90deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 0.9em; }
+        .score-details { font-size: 0.95em; color: #666; line-height: 1.6; }
+        .final-score { padding: 40px; text-align: center; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
+        .final-score h2 { font-size: 3em; margin-bottom: 10px; }
+        .final-score p { font-size: 1.3em; opacity: 0.9; }
+        .rating { display: inline-block; margin-top: 15px; padding: 10px 20px; background: rgba(255,255,255,0.2); border-radius: 5px; font-size: 1.1em; }
+        .footer { padding: 20px; background: #f8f9fa; text-align: center; color: #999; font-size: 0.9em; border-top: 1px solid #e0e0e0; }
+        @media (max-width: 768px) { .header h1 { font-size: 1.8em; } .info-grid { grid-template-columns: 1fr; } .final-score h2 { font-size: 2em; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 Evaluación de Rama: blackhatbash</h1>
+            <p>Rúbrica completa de análisis de commits y código</p>
+        </div>
+        <div class="info-grid">
+            <div class="info-item"><label>Repositorio</label><value>.</value></div>
+            <div class="info-item"><label>Rama</label><value>blackhatbash</value></div>
+            <div class="info-item"><label>Usuario</label><value>Santiago</value></div>
+            <div class="info-item"><label>Fecha de Evaluación</label><value>lun 15 jun 2026 13:58:40 UTC</value></div>
+        </div>
+        <div class="score-section">
+            
+    <div class="score-card"><div class="score-header"><h3>1. Calidad de Commits</h3><div class="score-value">32/100</div></div><div class="score-body"><div class="score-bar"><div class="score-fill" style="width: 32%">32%</div></div></div></div>
+    <div class="score-card"><div class="score-header"><h3>2. Horario de Commits</h3><div class="score-value">99/100</div></div><div class="score-body"><div class="score-bar"><div class="score-fill" style="width: 99%">99%</div></div><div class="score-details">Dentro de horario: 104 | Fuera de horario: 1</div></div></div>
+    <div class="score-card"><div class="score-header"><h3>3. Calidad de Mensajes</h3><div class="score-value">21/100</div></div><div class="score-body"><div class="score-bar"><div class="score-fill" style="width: 21%">21%</div></div><div class="score-details">Excelente: 0 | Bueno: 3 | Pobre: 102</div></div></div>
+    <div class="score-card"><div class="score-header"><h3>4. Consistencia y Frecuencia</h3><div class="score-value">90/100</div></div><div class="score-body"><div class="score-bar"><div class="score-fill" style="width: 90%">90%</div></div><div class="score-details">Total commits: 105 en 89 días (1/día promedio)</div></div></div>
+    <div class="score-card"><div class="score-header"><h3>5. Cobertura de Cambios</h3><div class="score-value">75/100</div></div><div class="score-body"><div class="score-bar"><div class="score-fill" style="width: 75%">75%</div></div><div class="score-details">Archivos modificados: 1 | Promedio: 0 por commit</div></div></div>
+    <div class="score-card"><div class="score-header"><h3>6. Tamaño de Commits</h3><div class="score-value">90/100</div></div><div class="score-body"><div class="score-bar"><div class="score-fill" style="width: 90%">90%</div></div><div class="score-details">Líneas totales cambiadas: 3979 | Promedio: 37 líneas/commit</div></div></div>
+    <div class="score-card"><div class="score-header"><h3>7. Limpieza (Merge Commits)</h3><div class="score-value">100/100</div></div><div class="score-body"><div class="score-bar"><div class="score-fill" style="width: 100%">100%</div></div><div class="score-details">Merge commits detectados: 0</div></div></div>
+    <div class="score-card"><div class="score-header"><h3>8. Actividad Fuera de Horas</h3><div class="score-value">95/100</div></div><div class="score-body"><div class="score-bar"><div class="score-fill" style="width: 95%">95%</div></div><div class="score-details">Madrugada: 1 | Tarde/Noche: 0 | Fin de semana: 0</div></div></div>
+    <div class="score-card"><div class="score-header"><h3>9. Integridad del Código</h3><div class="score-value">93/100</div></div><div class="score-body"><div class="score-bar"><div class="score-fill" style="width: 93%">93%</div></div><div class="score-details">Commits temporales (WIP/TMP/Debug): 1</div></div></div>
+    <div class="score-card"><div class="score-header"><h3>10. Convención de Nombres</h3><div class="score-value">0/100</div></div><div class="score-body"><div class="score-bar"><div class="score-fill" style="width: 0%">0%</div></div><div class="score-details">Cumplen especificación: 1 de 105</div></div></div>
+        </div>
+        <div class="final-score">
+            <h2>67 / 100</h2>
+            <p>Calificación Oficial Obtenida</p>
+            <div class="rating">ACEPTABLE (D)</div>
+        </div>
+        <div class="footer">
+            <p>Evaluación automatizada generada el lun 15 jun 2026 13:58:40 UTC</p>
+            <p>Script: evaluate_blackhatbash.sh v1.2</p>
+        </div>
+    </div>
+</body>
+</html>

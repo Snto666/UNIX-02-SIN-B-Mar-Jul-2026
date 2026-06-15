@@ -1,0 +1,22 @@
+{
+  "evaluacion_rubrica": {
+    "fecha": "lun 15 jun 2026 13:58:40 UTC",
+    "repositorio": ".",
+    "rama": "blackhatbash",
+    "usuario": "Santiago",
+    "metricas": {
+      "calidad_commits": "32/100",
+      "horario_commits": "99/100",
+      "calidad_mensajes": "21/100",
+      "consistencia": "90/100",
+      "cobertura": "75/100",
+      "tamanio": "90/100",
+      "limpieza_merge": "100/100",
+      "actividad_extra": "95/100",
+      "integridad": "93/100",
+      "convencion_nombres": "0/100"
+    },
+    "puntuacion_final": 67,
+    "calificacion": "ACEPTABLE (D)"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "evaluacion_rubrica": {
+    "fecha": "FECHA_PLACEHOLDER",
+    "repositorio": "REPO_PLACEHOLDER",
+    "rama": "RAMA_PLACEHOLDER",
+    "usuario": "USUARIO_PLACEHOLDER",
+    "metricas": {
+METRICAS_PLACEHOLDER
+    },
+    "puntuacion_final": PUNTUACION_FINAL_PLACEHOLDER,
+    "calificacion": "CALIFICACION_PLACEHOLDER"
+  }
+}

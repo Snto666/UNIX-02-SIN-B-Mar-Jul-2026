@@ -623,7 +623,7 @@ run_evaluation() {
     printf "%-40s | %5s | %5s\n" "MÉTRICA" "SCORE" "PESO %"
     printf "%-40s |\n" "────────────────────────────────────────────────────────────"
     printf "%-40s | %5d | %5d\n" "1. Calidad de Commits" "$quality_score" "15"
-    printf "%-40s | %5d | %5d\n" "2. Horario de Commits (7 AM - 5 PM)" "$time_score" "15"
+    printf "%-40s | %5d | %5d\n" "2. Horario de Commits (7 AM - 9 AM)" "$time_score" "15"
     printf "%-40s | %5d | %5d\n" "3. Calidad de Mensajes" "$msg_score" "15"
     printf "%-40s | %5d | %5d\n" "4. Consistencia" "$consistency_score" "10"
     printf "%-40s | %5d | %5d\n" "5. Cobertura de Cambios" "$coverage_score" "10"
