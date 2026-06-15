@@ -22,3 +22,7 @@ grep -o "35.237.4.214" log.txt
 
 # 6. CASE-INSENSITIVE PIPE (-i): Filter system data ignoring lower/uppercase differences
 ps | grep -i tty
+
+ps | grep TTY
+
+grep -v "35.237.4.214" log.txt
