@@ -188,7 +188,30 @@ sleep 100
 bg %1 
 # RESULT: The shell confirms background reactivation and appends the asynchronous control operator (&):
 # [1]+ sleep 100 &
+# ------------------------------------------------------------------------------
+# Block 8 (Continued): Persistent Asynchronous Execution via nohup
+# ------------------------------------------------------------------------------
 
-#[Santiago Yambay] UNIX-02-SIN-B-Mar-Jul-2026 ✗ $ nohup ./exercise2.sh &
-#[2] 34764
+# Executes the local script './exercise2.sh' using 'nohup' (No Hang Up) combined with the 
+# background control operator (&). This architectural command detaches the process from the 
+# current terminal session's lifecycle. If the terminal emulator closes or the SSH connection 
+# drops, the process intercepts and ignores the resulting SIGHUP (Signal Hang Up) kernel notification, 
+# ensuring persistent asynchronous execution (the shell / commands — BHB Ch.1 | Setting up the lab — BHB Ch.3).
+nohup ./exercise2.sh &
+# RESULT:
+# [2] 34764
+# nohup: se descarta la entrada y se añade la salida a 'nohup.out'
+# NOTE: Because the process loses its interactive terminal binding, nohup automatically discards 
+# standard input (stdin) and redirects standard output (stdout) along with standard error (stderr) 
+# streams into a persistent file named 'nohup.out' within the working directory (redirection and pipes — BHB Ch.1).
+
+
+# ------------------------------------------------------------------------------
+# Verification Command: Auditing the Active Background Process State
+# ------------------------------------------------------------------------------
+
+# Generates a full system process status matrix ('ps -ef') and pipes the data stream into grep 
+# to explicitly verify that './exercise2.sh' under PID 34764 is actively allocated inside the 
+# operating system kernel's task scheduler (redirection and pipes — BHB Ch.1 | Setting up the lab — BHB Ch.3).
+ps -ef | grep exercise2.sh
 #[Santiago Yambay] UNIX-02-SIN-B-Mar-Jul-2026 ➜ $ nohup: se descarta la entrada y se añade la salida a 'nohup.out'
