@@ -1,0 +1,4 @@
+Name,Target Domain,Ping Result,Date and Time
+mysite,nostarch.com,failure,2026-06-17 13:54:38
+localhost,localhost,SUCCESS,2026-06-17 13:57:35
+localhost,localhost,success,2026-06-17 13:59:50
