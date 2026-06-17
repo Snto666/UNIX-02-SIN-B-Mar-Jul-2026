@@ -94,3 +94,8 @@ cat newlog1.txt
 # or old metadata) from the stream, saving the truncated result into newlog.txt 
 # (grep, sed, awk — BHB Ch.2 | redirection and pipes — BHB Ch.1).
 sed '1d' log.txt > newlog.txt
+# Employs the special '$' address identifier in sed, which dynamically represents 
+# the absolute last line of the input stream regardless of the file's length. 
+# The 'd' command drops this trailing line, and the output is redirected into 
+# newlogl.txt (grep, sed, awk — BHB Ch.2 | redirection and pipes — BHB Ch.1).
+sed '$d' log.txt > newlogl.txt
