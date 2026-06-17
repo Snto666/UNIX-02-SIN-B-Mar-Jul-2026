@@ -138,14 +138,14 @@ sleep 100 &
 # displaying UID, PID, Parent PID (PPID), and execution terminal channels (TTY) 
 # (redirection and pipes — BHB Ch.1 | Setting up the lab — BHB Ch.3).
 ps -ef | grep sleep
-"root           1       0  0 12:13 ?        00:00:00 /bin/sh -c echo Container started trap "exit 0" 15  exec "$@" while sleep 1 & wait $!; do :; done -
-root       25708     711  0 13:10 pts/2    00:00:00 sleep 100
-root       25737     711  0 13:10 pts/2    00:00:00 sleep 100
-root       25754     711  0 13:10 pts/2    00:00:00 sleep 100
-root       25760     711  0 13:10 pts/2    00:00:00 sleep 100
-root       25772     711  0 13:10 pts/2    00:00:00 sleep 100
-root       25914       1  0 13:10 ?        00:00:00 sleep 1
-root       25923     711  0 13:10 pts/2    00:00:00 grep --color=auto sleep"
+#"root           1       0  0 12:13 ?        00:00:00 /bin/sh -c echo Container started trap "exit 0" 15  exec "$@" while sleep 1 & wait $!; do :; done -
+#root       25708     711  0 13:10 pts/2    00:00:00 sleep 100
+#root       25737     711  0 13:10 pts/2    00:00:00 sleep 100
+#root       25754     711  0 13:10 pts/2    00:00:00 sleep 100
+#root       25760     711  0 13:10 pts/2    00:00:00 sleep 100
+#root       25772     711  0 13:10 pts/2    00:00:00 sleep 100
+#root       25914       1  0 13:10 ?        00:00:00 sleep 1
+#root       25923     711  0 13:10 pts/2    00:00:00 grep --color=auto sleep"
 
 # Queries the shell's internal session job table using the 'jobs' built-in command. 
 # Unlike 'ps' (which monitors kernel-wide operations), 'jobs' strictly tracks asynchronous 
@@ -155,11 +155,11 @@ root       25923     711  0 13:10 pts/2    00:00:00 grep --color=auto sleep"
 # (the shell / commands — BHB Ch.1).
 jobs
 #RESULT:
-[1]   Ejecutando                 sleep 100 &
-[2]   Ejecutando                 sleep 100 &
-[3]   Ejecutando                 sleep 100 &
-[4]-  Ejecutando                 sleep 100 &
-[5]+  Ejecutando                 sleep 100 &
+#[1]   Ejecutando                 sleep 100 &
+#[2]   Ejecutando                 sleep 100 &
+#[3]   Ejecutando                 sleep 100 &
+#[4]-  Ejecutando                 sleep 100 &
+#[5]+  Ejecutando                 sleep 100 &
 
 # ------------------------------------------------------------------------------
 # Block 8 (Continued): Foregrounding, Suspending, and Background Resumption Mechanics
@@ -188,3 +188,7 @@ sleep 100
 bg %1 
 # RESULT: The shell confirms background reactivation and appends the asynchronous control operator (&):
 # [1]+ sleep 100 &
+
+#[Santiago Yambay] UNIX-02-SIN-B-Mar-Jul-2026 ✗ $ nohup ./exercise2.sh &
+#[2] 34764
+#[Santiago Yambay] UNIX-02-SIN-B-Mar-Jul-2026 ➜ $ nohup: se descarta la entrada y se añade la salida a 'nohup.out'
