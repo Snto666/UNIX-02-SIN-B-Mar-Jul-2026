@@ -100,6 +100,24 @@ sed '1d' log.txt > newlog.txt
 # newlogl.txt (grep, sed, awk — BHB Ch.2 | redirection and pipes — BHB Ch.1).
 sed '$d' log.txt > newlogl.txt
 
+# ------------------------------------------------------------------------------
+# Block 7: Multi-Line Range Operations and In-Place Stream Editing
+# ------------------------------------------------------------------------------
+
+# Uses a comma-separated line range specification ('5,7') to target lines 5 through 7 
+# inclusive. The 'd' command deletes this specific slice from the stream before the 
+# standard output redirection operator (>) writes the remaining payload into a new 
+# separate file named newlog57.txt (grep, sed, awk — BHB Ch.2 | redirection and pipes — BHB Ch.1).
 sed '5,7d' newlog.txt > newlog57.txt
+
+# The '-n' flag suppresses sed's default behavior of automatically printing every line of 
+# the input stream. By combining it with the address range '2,15' and the explicit 'p' (print) 
+# action, sed isolates and displays only lines 2 through 15 on standard output, acting 
+# as a highly precise file slicer (grep, sed, awk — BHB Ch.2).
 sed -n '2,15 p' log.txt
+
+# Employs the highly destructive '-i' (in-place) option, which instructs sed to apply 
+# modifications directly to the source file (log.txt) instead of routing the altered data 
+# stream to standard output. Here, it permanently strips out line 1 (the first record) 
+# from the asset on disk (grep, sed, awk — BHB Ch.2).
 sed -i '1d' log.txt
