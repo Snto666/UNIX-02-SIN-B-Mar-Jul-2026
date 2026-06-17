@@ -85,3 +85,12 @@ sed 's/ //g' log.txt > newlog1.txt
 # and dumps its entire content stream directly into the terminal's standard output 
 # for immediate visual inspection (the shell / commands — BHB Ch.1).
 cat newlog1.txt
+# ------------------------------------------------------------------------------
+# Block 6: Line-Specific Deletions via Stream Editing
+# ------------------------------------------------------------------------------
+
+# Utilizes sed's line-addressing capabilities to target specifically line number 1. 
+# The 'd' (delete) command drops this initial line (often used to strip column headers 
+# or old metadata) from the stream, saving the truncated result into newlog.txt 
+# (grep, sed, awk — BHB Ch.2 | redirection and pipes — BHB Ch.1).
+sed '1d' log.txt > newlog.txt
