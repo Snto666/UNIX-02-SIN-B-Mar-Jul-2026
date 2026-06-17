@@ -121,3 +121,45 @@ sed -n '2,15 p' log.txt
 # stream to standard output. Here, it permanently strips out line 1 (the first record) 
 # from the asset on disk (grep, sed, awk — BHB Ch.2).
 sed -i '1d' log.txt
+# ------------------------------------------------------------------------------
+# Block 8: Session Job Management and Process Table Auditing
+# ------------------------------------------------------------------------------
+
+# Spawns a long-running 'sleep' execution environment asynchronously using the 
+# background control operator (&). Upon execution, the shell instantly prints a job 
+# confirmation token mapping the localized job index [1] to the kernel's global 
+# Process ID tracking number (PID 25708) (the shell / commands — BHB Ch.1).
+sleep 100 &
+# RESULT: [1] 25708
+
+# Generates a full-format system-wide snapshot of all active operating system processes 
+# ('ps -ef') and pipes that standard output stream into grep to isolate lines matching 
+# the token 'sleep'. This exposes execution parameters across parent-child structures, 
+# displaying UID, PID, Parent PID (PPID), and execution terminal channels (TTY) 
+# (redirection and pipes — BHB Ch.1 | Setting up the lab — BHB Ch.3).
+ps -ef | grep sleep
+"root           1       0  0 12:13 ?        00:00:00 /bin/sh -c echo Container started trap "exit 0" 15  exec "$@" while sleep 1 & wait $!; do :; done -
+root       25708     711  0 13:10 pts/2    00:00:00 sleep 100
+root       25737     711  0 13:10 pts/2    00:00:00 sleep 100
+root       25754     711  0 13:10 pts/2    00:00:00 sleep 100
+root       25760     711  0 13:10 pts/2    00:00:00 sleep 100
+root       25772     711  0 13:10 pts/2    00:00:00 sleep 100
+root       25914       1  0 13:10 ?        00:00:00 sleep 1
+root       25923     711  0 13:10 pts/2    00:00:00 grep --color=auto sleep"
+
+# Queries the shell's internal session job table using the 'jobs' built-in command. 
+# Unlike 'ps' (which monitors kernel-wide operations), 'jobs' strictly tracks asynchronous 
+# tasks localized to the current shell environment. It displays job indexes, operational 
+# states, and positional symbols like '+' (the primary/current background job target for 
+# 'fg' or 'bg' shortcuts) and '-' (the secondary/previous background job) 
+# (the shell / commands — BHB Ch.1).
+jobs
+#RESULT:
+[1]   Ejecutando                 sleep 100 &
+[2]   Ejecutando                 sleep 100 &
+[3]   Ejecutando                 sleep 100 &
+[4]-  Ejecutando                 sleep 100 &
+[5]+  Ejecutando                 sleep 100 &
+
+fg %1
+#RESULT: sleep 100
