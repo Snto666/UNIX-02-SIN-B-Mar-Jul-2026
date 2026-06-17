@@ -161,5 +161,30 @@ jobs
 [4]-  Ejecutando                 sleep 100 &
 [5]+  Ejecutando                 sleep 100 &
 
+# ------------------------------------------------------------------------------
+# Block 8 (Continued): Foregrounding, Suspending, and Background Resumption Mechanics
+# ------------------------------------------------------------------------------
+
+# Pulls job number 1 ('%1') from the background session table into the foreground 
+# of the terminal. This transfers operational control back to the standard input/output 
+# streams, blocking the interactive shell prompt until the process terminates 
+# or is intercepted (the shell / commands — BHB Ch.1).
 fg %1
-#RESULT: sleep 100
+# RESULT: The terminal interface becomes blocked by the active process:
+sleep 100
+
+# Intercepts the active foreground process by issuing the 'Ctrl+Z' (^Z) keyboard sequence. 
+# This transmits a SIGTSTP (terminal stop) kernel-level signal to the process stack, 
+# halting its execution loop and changing its operational state from 'Running' to 
+# 'Suspended/Stopped', thereby returning prompt control to the user (the shell / commands — BHB Ch.1).
+^Z
+# RESULT: The shell captures the suspension signal and prints the job state token:
+# [1]+  Detenido                   sleep 100
+
+# Invokes the 'bg' (background) built-in command to target the suspended job number 1 ('%1'). 
+# This action transmits a SIGCONT (signal continue) to the process, forcing it to resume 
+# execution asynchronously inside a background layer without hijacking the current terminal's 
+# standard input stream (the shell / commands — BHB Ch.1).
+bg %1 
+# RESULT: The shell confirms background reactivation and appends the asynchronous control operator (&):
+# [1]+ sleep 100 &
