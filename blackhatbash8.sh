@@ -70,7 +70,18 @@ grep "Godzilla" newlog.txt | head -n 10
 # We use grep with the '-c' (count) flag to print the total number of times "Mozilla" 
 # appears in the new file. If the global substitution succeeded perfectly, this command 
 # must return exactly 0 (grep, sed, awk — BHB Ch.2).
-grep -c "Mozilla" newlog.txt
 
-sed 's/ //g' log.txt
-sed '1d' log.txt
+# ------------------------------------------------------------------------------
+# Block 5: Wholesale Whitespace Elimination and Content Display
+# ------------------------------------------------------------------------------
+
+# Uses sed to execute a global substitution that targets every literal space character 
+# (' ') and replaces it with an empty string ('//'). The 'g' modifier ensures this 
+# happens across the entire line, effectively compressing or stripping all spaces 
+# before redirecting the stream into a new file (grep, sed, awk — BHB Ch.2 | redirection and pipes — BHB Ch.1).
+sed 's/ //g' log.txt > newlog1.txt
+
+# The 'cat' (concatenate) utility reads the newly generated, space-stripped file 
+# and dumps its entire content stream directly into the terminal's standard output 
+# for immediate visual inspection (the shell / commands — BHB Ch.1).
+cat newlog1.txt
