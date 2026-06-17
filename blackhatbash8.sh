@@ -99,3 +99,7 @@ sed '1d' log.txt > newlog.txt
 # The 'd' command drops this trailing line, and the output is redirected into 
 # newlogl.txt (grep, sed, awk — BHB Ch.2 | redirection and pipes — BHB Ch.1).
 sed '$d' log.txt > newlogl.txt
+
+sed '5,7d' newlog.txt > newlog57.txt
+sed -n '2,15 p' log.txt
+sed -i '1d' log.txt
